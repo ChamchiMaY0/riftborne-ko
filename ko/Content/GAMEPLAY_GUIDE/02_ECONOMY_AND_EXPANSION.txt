@@ -1,239 +1,57 @@
-02) ECONOMY AND EXPANSION
--------------------------
-
-THE FOUR CORE RESOURCES
------------------------
-- `Vulkron`: heavy industry, many structure costs, and one of the strongest
-  pressure points in long wars
-- `Aurelite`: broad economic and ship cost support, especially important for
-  Astraean discounts
-- `Deuterium`: logistics, advanced hull support, and the discounted resource
-  for Veil fleets
-- `Astra`: energy income, ship upkeep, and the resource that most often causes
-  sudden collapse if ignored
-
-PASSIVE PRODUCTION: THE EXACT RULE
-----------------------------------
-For each base and each resource:
-
-`gain = baseProductionPerHour * resourceMultiplier * hoursPassed`
-
-Then the game clamps the result to storage:
-
-`newStored = min(storageCap, oldStored + gain)`
-
-In the standard campaign, `baseProductionPerHour = 1,000` for every core
-resource before multipliers.
-
-WHERE MULTIPLIERS COME FROM
----------------------------
-Each base starts at:
-
-`resourceMultiplier = 1.0`
-
-Then it adds:
-- tile bonuses
-- building bonuses
-
-Then it applies multiplicative effects from:
-- some Eldritch upgrades
-- some SPU bonuses
-
-STANDARD RESOURCE-BUILDING MATH
--------------------------------
-Resource buildings use the campaign's production scaling.
-
-The standard campaign is configured so that:
-- base production starts at `1,000 / hour`
-- a level 20 matching resource building reaches `10,000 / hour`
-
-That means each level adds:
-
-`((10,000 / 1,000) - 1) / 20 = 0.45`
-
-So the standard resource-building bonus is:
-
-`bonus = 0.45 * buildingLevel`
-
-Examples in the standard campaign:
-- level 1 Extractor: `+0.45` Vulkron multiplier
-- level 10 Extractor: `+4.50` Vulkron multiplier
-- level 20 Extractor: `+9.00` Vulkron multiplier
-
-Because the base already starts at `1.0`, a level 20 resource building gives:
-
-`total multiplier = 1.0 + 9.0 = 10.0x`
-
-WORKED EXAMPLE: PASSIVE PRODUCTION
-----------------------------------
-Suppose a colony has:
-- standard base Vulkron production: `1,000 / hour`
-- `Extractor 6`
-- `+0.20` Vulkron tile bonus
-- no SPU or Eldritch economy multiplier
-
-Step 1: building bonus
-
-`Extractor 6 = 0.45 * 6 = +2.70`
-
-Step 2: total multiplier
-
-`1.0 + 0.20 + 2.70 = 3.90`
-
-Step 3: two-hour gain
-
-`1,000 * 3.90 * 2 = 7,800`
-
-That base gains `7,800 Vulkron` over two hours unless storage caps it first.
-
-STORAGE: THE REAL CURVE
------------------------
-Storage is not a flat linear ladder from level 1 to level 20.
-
-For `Silo` and `Solar Cell`:
-- level 1 starts at `55%` of the level 5 target
-- levels 1 to 5 use a smooth early ramp
-- levels 5 to 20 then scale linearly to the level 20 target
-
-In the standard campaign:
-- level 1 storage target: `0.55 * 5,000 = 2,750`
-- level 5 storage target: `5,000`
-- level 20 storage target: `100,000`
-
-Important:
-- `Silo` stores `Vulkron`, `Aurelite`, and `Deuterium`
-- `Solar Cell` stores `Astra`
-
-First base:
-- starts at level 5 storage and begins full
-
-Fresh colonies:
-- start much smaller and usually need storage upgrades immediately
-
-RAID DAMPENING
---------------
-`Nano Storage` reduces hostile attack and raid loot output.
-
-Formula:
-
-`cargoPenalty = min(0.80, 0.04 * NanoStorageLevel)`
-
-Examples:
-- level 4: `16%` hidden
-- level 8: `32%` hidden
-- level 20: capped at `80%` hidden
-
-Only the visible portion can be stolen by raids.
-
-UPKEEP: THE ASTRA TAX ON EVERY GARRISON
----------------------------------------
-The game sums Astra upkeep from all stationed ships at a base and then applies
-upkeep reduction.
-
-Exact base rule:
-
-`hourlyUpkeep = sum(shipUpkeepPerHour * shipCount)`
-
-Then:
-
-`hourlyUpkeepAfterReduction = hourlyUpkeep * (1 - UpkeepReduction)`
-
-If the base has the Veil Eldritch upgrade `Astra Suture Seal`, upkeep is then
-reduced again:
-
-`hourlyUpkeepAfterSeal = hourlyUpkeepAfterReduction * 0.80`
-
-If the base is a mining outpost, the game tries to drain Astra from the colony
-that founded it, or the richest colony if the original colony is missing.
-
-DRONE FACILITY: THE EXACT UPKEEP REDUCTION
-------------------------------------------
-`Drone Facility` gives:
-
-`UpkeepReduction = min(0.80, 0.04 * level)`
-
-Examples:
-- level 5: `20%`
-- level 10: `40%`
-- level 20: `80%`
-
-SPU upkeep bonuses can push the total reduction even higher, but the base-side
-stored value is still capped at `95%`.
-
-STARVATION: WHAT HAPPENS AT ZERO ASTRA
---------------------------------------
-If a base that is supporting stationed ships hits `0 Astra`, ships begin dying.
-
-The rule is brutal:
-- one ship dies every `10` seconds of simulation time
-- the game removes the lowest-cost ship first
-
-If you want a simple safety rule, keep at least a few hours of Astra burn on
-important military bases.
-
-MAP BONUSES AND WHY TILE QUALITY MATTERS
-----------------------------------------
-Tile bonuses add directly into the relevant multiplier.
-
-Examples:
-- metal-rich tile -> higher Vulkron multiplier
-- energy-rich tile -> higher Astra multiplier
-- defensive tile -> higher defense multiplier in battle
-
-That means strong tiles are not just "nice to have." They scale every later
-building you place on top of them.
-
-EXPANSION RULES: WHAT UNLOCKS WHAT
-----------------------------------
-The game uses hard Spire gates.
-
-Outpost slots:
-- unlock at `Central Spire 5`, `10`, `15`, then each level from `21` to `25`
-- each slot can be spent on any valid outpost target from that origin:
-  strategic outposts on empty-space tiles, asteroid mining outposts on asteroid
-  tiles, or rare-metal mining outposts on seeded mining-outpost-site tiles
-- outpost slots are shared between single-player and multiplayer rules
-
-Colonies:
-- require `Central Spire 20` on the origin base
-- require at least one `Colonization` ship in the fleet
-- one colony ship is consumed when the colony is founded
-- each origin base can support one next colony
-- full colonies can raise their own Spire and continue the chain
-
-Occupied targets:
-- if a colonization fleet reaches a hostile claimed base, it resolves as combat
-  instead of founding a colony
-
-WORKED EXAMPLE: CAN THIS BASE EXPAND?
--------------------------------------
-Suppose your origin base has:
-- `Central Spire 12`
-- one `Colonization` ship ready
-- a valid empty tile in range
-
-Result:
-- outposts: yes, two slots are unlocked (`L5` and `L10`), and each can be used
-  for strategic, asteroid mining, or rare-metal mining targets if the tile is valid
-- colony: no, because `12 < 20`
-
-After you upgrade to `Central Spire 20`:
-- colony: yes
-
-After you upgrade beyond `Central Spire 20`:
-- each level from `21` through `25` adds one more generic outpost slot from
-  that origin
-
-PRACTICAL ECONOMY RULES THAT WIN GAMES
---------------------------------------
-1. Astra is not optional. Astra bankruptcy kills ships, reaction time, and map
-   confidence.
-
-2. Storage is tempo. A capped economy is throwing away production every second.
-
-3. Expansion only pays if the new base can be defended or resupplied.
-
-4. One great production tile is often stronger than two weak, exposed colonies.
-
-5. Reach Spire 5, 10, 15, 20, and the post-20 outpost slots on purpose. Do not
-   "eventually" drift into them.
+02) 경제와 확장
+---------------
+
+경제의 기본
+-----------
+경제는 생산량, 저장 상한, 대기열, 이동 시간의 합입니다. 생산만 높고 저장고가 낮으면 자원이 새고, 저장고만 높고 생산이 낮으면 빈 공간만 커집니다.
+
+핵심 자원
+---------
+- 아스트라: 건설, 함선, 운영의 기본 압력 자원입니다.
+- 벌크론: 전쟁 준비와 대량 생산에 자주 들어갑니다.
+- 아우렐라이트: 발전과 특수 기반에 중요합니다.
+- 중수소: 이동, 군수, 항로 유지에 큰 영향을 줍니다.
+
+상한 관리
+---------
+상한에 닿은 자원은 더 생산되지 않습니다. 상한은 보이지 않는 적입니다.
+
+좋은 경제 순서:
+1. 필요한 생산 건물을 올립니다.
+2. 곧 상한에 닿을 자원의 저장고를 올립니다.
+3. 건설 대기열이 비지 않게 합니다.
+4. 남는 자원은 시장, 항로, 함선, 전초기지로 바꿉니다.
+
+확장 타이밍
+-----------
+확장은 중앙 첨탑 단계에 묶여 있습니다. 첨탑이 늦으면 새 기지와 전초기지도 늦습니다.
+
+확장 전 확인:
+- 새 기지를 지킬 최소 함대가 있는가
+- 초기 건설을 밀어 넣을 자원 여유가 있는가
+- 기존 기지의 저장고가 터지지 않는가
+- 가까운 적을 정찰했는가
+
+전초기지와 식민지
+-----------------
+전초기지는 경제와 지도 장악의 발판입니다. 식민지는 장기 생산과 발진 거리의 새 중심입니다.
+
+전초기지는 빠른 이득을 주지만 방치하면 약점이 됩니다. 식민지는 느리게 자라지만 자라면 전쟁의 지도를 바꿉니다.
+
+전문화
+------
+모든 기지를 같은 모양으로 만들면 읽히기 쉽습니다.
+
+추천 역할:
+- 본거지: 안정 생산, 방어막, 핵심 함대
+- 전진 기지: 조선소, 방어, 짧은 발진 거리
+- 경제 기지: 생산, 저장, 무역로
+- 군수 기지: 항로, 지원군, 귀환 임무 관리
+
+흔한 경제 실수
+---------------
+- 생산만 올리고 저장고를 잊는 것
+- 저장고만 올리고 대기열을 비우는 것
+- 수입 없이 과확장하는 것
+- 시장으로 해결할 수 있는 병목을 방치하는 것
+- 한 기지에 모든 역할을 몰아넣는 것

@@ -1,202 +1,44 @@
-09) MARKETS, ORGANIZATIONS, AND DIPLOMACY
------------------------------------------
+09) 시장, 조직, 외교
+-------------------
 
-ORBITAL EXCHANGE AND THE RESOURCE MARKET
-----------------------------------------
-Marketplace offers are strict `1-for-1` listings:
-- exactly one offered resource type
-- exactly one wanted resource type
+시장
+----
+시장은 시간을 사는 도구입니다. 지금 필요한 자원을 당겨오고, 당장 쓰지 않을 잉여를 다른 선택지로 바꿉니다.
 
-Posting an offer requires:
-- enough stock to cover the offered goods
-- enough cargo ships to cover that shipment
+시장 사용이 좋은 때:
+- 건설 계획이 바뀌었습니다.
+- 한 자원만 병목입니다.
+- 저장 상한에 닿기 직전입니다.
+- 급한 방어 또는 발진이 필요합니다.
 
-Those cargo ships are reserved while the offer is live.
+시장 사용이 나쁜 때:
+- 나중에 바로 필요할 자원을 팔고 있습니다.
+- 손실을 감추려고 반복 거래합니다.
+- 생산 구조를 고칠 생각 없이 매수만 합니다.
 
-Accepting an offer requires:
-- enough stock to pay the wanted amount
-- enough cargo capacity to haul the payment
+조직과 계약
+-----------
+조직은 장기 영향력을 숫자로 바꾸는 구조입니다. 계약은 다른 플레이어의 행동을 자원, 시간, 보상으로 묶습니다.
 
-MARKET SHIPMENTS
-----------------
-Accepted trades create two travel legs:
-- seller goods travel to buyer
-- buyer goods travel to seller
+좋은 계약:
+- 목표가 분명합니다.
+- 보상이 행동 비용에 맞습니다.
+- 완료 조건이 오해를 줄입니다.
 
-Travel uses the logistics rule from section `04`.
+지분
+----
+지분은 장기 신뢰와 기대의 숫자입니다. 공포 매도는 보통 다른 사람에게 보상합니다.
 
-Practical market lesson:
-- Orbital Exchange on a launch base is a real trade advantage
-- high travel speed shortens capital lock-up
-- weak cargo means attractive offers may still be impossible to execute
+외교
+----
+외교 태도는 이유 없이 바뀌지 않습니다. 중립은 안전이 아니고, 동맹은 공짜 방패가 아닙니다.
 
-ORGANIZATIONS: WHAT THEY ARE
-----------------------------
-Organizations are player-facing financial institutions that can act as:
-- contract boards
-- lenders
-- holding vehicles
+외교를 읽는 법:
+- 세력 이동과 공지를 확인합니다.
+- 시장 움직임을 봅니다.
+- 갑작스러운 침묵을 경계합니다.
+- 공동의 적이 동맹을 만든다는 점을 기억합니다.
 
-A single organization can lean toward one role or become a hybrid.
-
-FOUNDING RULES
---------------
-- ticker must be exactly `3` letters
-- minimum seed is `1 Noctmark`
-- starting capital structure:
-  - authorized shares = `100`
-  - founder-issued shares = `100`
-  - public float = `0`
-- initial share price:
-
-  `max(1, round(seedNoctmarks / 100))`
-
-So a `500` Noctmark seed implies a starting share price near `5`.
-
-CONTRACTS
+실전 원칙
 ---------
-Contracts pay in `Noctmarks`.
-
-Current contract types:
-- destroy a base
-- destroy building levels
-- destroy ship Astra value
-- raid resources total
-- raid one resource type
-- destroy a mining outpost
-- break Ion Shield integrity
-- raid Astra total
-
-How to use them:
-- take contracts that match what your fleet already wants to do
-- post contracts that make rivals bleed in ways your own empire benefits from
-
-The organization UI already exposes:
-- recommended payout
-- recent sold average
-- offer quality
-- risk band
-- summary text
-
-That is the best player-facing way to judge whether a contract is cheap,
-credible, or bait.
-
-SHARES AND THE EQUITY MARKET
-----------------------------
-Organizations support:
-- sell orders
-- bid orders
-- completed trades
-- price history
-
-Useful readings on the owner page:
-- `Last trade`
-- `Fair value`
-- `Market cap`
-- `Enterprise value`
-- float
-- ownership concentration
-- dividend policy
-
-Player lesson:
-- `Last trade` tells you what just cleared
-- `Fair value` tells you what the business looks like underneath the tape
-- the gap between them tells you whether the market is hot, weak, or starved
-
-LOANS
------
-Organizations can lend and borrow in `Noctmarks`.
-
-Daily interest rule:
-
-`dailyInterest = ceil(outstandingPrincipal * dailyRatePercent / 100)`
-
-WORKED EXAMPLE: LOAN INTEREST
------------------------------
-Suppose a board borrows `12,000 Noctmarks` at `1.8%` daily.
-
-`dailyInterest = ceil(12000 * 1.8 / 100)`
-`dailyInterest = ceil(216)`
-`dailyInterest = 216`
-
-That borrower owes `216 Noctmarks` every day until principal is repaid or the
-loan matures.
-
-DEFAULTS
---------
-If a borrower cannot cover daily interest, the loan can default.
-When that happens:
-- the lender seizes whatever treasury it can
-- the unpaid remainder is recorded as unrecovered
-- the credit relationship worsens
-
-Loan lesson:
-- borrowed cash should fund a plan that earns before the interest clock wins
-
-TRIBUTE, TRUCES, AND DIPLOMATIC PRESSURE
-----------------------------------------
-Players can use diplomacy to send:
-- truce offers
-- Noctmark tribute
-- resource tribute
-
-Tribute matters because it can:
-- move stock to an ally at the right time
-- improve relations
-- buy short-term stability inside a faction network
-
-Important detail:
-- `Noctmarks` go to the receiving leader's personal account
-- resource tribute goes to a receiving base
-
-ATTACKS AND PENALTIES
----------------------
-Raids and attacks create diplomatic friction.
-
-Veil `Phantom Treaty` is powerful because it cuts those attack and raid
-penalties by `80%` for fleets launched from that base.
-
-TRANSMISSIONS
--------------
-The Transmissions beacon gives you short interactive events with real gameplay
-consequences.
-
-Exact flow:
-- start a search
-- wait `10` to `30` seconds
-- pick one of three responses
-- after choosing, the beacon cools down for `10 minutes`
-
-Transmission outcomes can change:
-- resources
-- faction relations
-- ships
-- building levels
-
-Because transmission effects hit a real target base, they are strongest when
-used on the base that can convert the outcome immediately.
-
-USEFUL ECONOMIC USES OF THESE SYSTEMS
--------------------------------------
-1. Use the market to convert local surpluses into missing war inputs.
-
-2. Use organizations when your empire is rich enough that capital structure and
-   credit actually matter.
-
-3. Use contracts to pay for pressure you wanted on the map anyway.
-
-4. Use transmissions opportunistically, not habitually. Their value depends on
-   current context.
-
-5. Use tribute when a shared defensive line matters more than perfect selfish
-   efficiency.
-
-COMMON MISUSES
---------------
-1. Posting contracts you cannot really fund.
-
-2. Selling shares too cheaply just because you want instant cash.
-
-3. Borrowing for vanity expansion instead of a clear timing window.
-
-4. Treating diplomacy as flavor text while your frontier burns.
+경제는 선택지를 만들고 외교는 그 선택지를 싸게 만들 수 있습니다. 하지만 군수와 정찰이 없으면 어떤 조약도 늦은 지원군을 빠르게 만들지 못합니다.

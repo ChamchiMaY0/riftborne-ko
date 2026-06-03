@@ -1,266 +1,47 @@
-06) RAIDS, SIEGE, AND ESPIONAGE
--------------------------------
-
-RAID LOOT: THE ACTUAL LIMITS
-----------------------------
-A raid does not steal "whatever is there."
-It steals only what cargo, raid multipliers, and visible stock allow.
-
-Base cargo rule:
-
-`totalCarry = sum(shipCount * cargoCapacity * carrierBuffIfNonCarrier)`
-`totalCarry = totalCarry * fleetCargoMultiplier`
-
-Then:
-
-`maxStealable = min(totalCarry, totalResourcesOnBase)`
-
-If the fleet has a raid-loot multiplier above `1.0`, the game applies it next:
-
-`maxStealable = min(totalResourcesOnBase, maxStealable * raidLootMultiplier)`
-
-Then hidden resources matter:
-
-`visibleResources = totalResourcesOnBase * (1 - hiddenFraction)`
-
-Only the visible part can be stolen.
-
-WORKED EXAMPLE: RAID LOOT CEILING
----------------------------------
-Suppose a raid fleet launches from a base with `Orbital Exchange 10`, so its
-fleet cargo multiplier is `1.10`.
-
-Fleet:
-- `8 Auric`
-- `4 Quasar`
-- `1 Lumen`
-
-Cargo before multiplier:
-
-`8 * 78 * 1.0001 = 624.0624`
-`4 * 780 * 1.0001 = 3120.3120`
-`1 * 420 = 420.0000`
-
-`rawCarry = 624.0624 + 3120.3120 + 420.0000`
-`rawCarry = 4164.3744`
-
-Apply cargo multiplier:
-
-`totalCarry = 4164.3744 * 1.10`
-`totalCarry = 4580.8118`
-
-If the target base stores `10,000` total resources:
-
-`maxStealable = min(4580.8118, 10000)`
-`maxStealable = 4580.8118`
-
-If the fleet also has `Veil Siphon`, raid loot becomes `1.20x`:
-
-`maxStealable = min(10000, 4580.8118 * 1.20)`
-`maxStealable = min(10000, 5496.9742)`
-`maxStealable = 5496.9742`
-
-If the target cuts hostile loot output by `40%` through `Nano Storage 8`:
-
-`real ceiling = 5496.9742 * (1 - 0.40)`
-`real ceiling = 3298.1845`
-
-RAID LOOT IS RANDOMIZED BY RESOURCE
------------------------------------
-After the cap is set, the raid steals in one-unit chunks from visible stock.
-
-Practical meaning:
-- you can predict the ceiling
-- you cannot guarantee the exact mix if the defender holds several resources
-
-STOLEN BREATH: THE EXTRA SIPHON
--------------------------------
-If the fleet has `Stolen Breath`, a successful raid can siphon extra loot after
-the main steal.
-
-Exact rule:
-
-`desiredExtra = stolenTotal * 0.10`
-`capExtra = remainingTotalOnBase * 0.05`
-`extraBudget = min(desiredExtra, capExtra)`
-
-The game then steals `floor(extraBudget)` more visible units.
-
-Worked example:
-- main raid steals `5,400`
-- `desiredExtra = 540`
-- target has `4,600` total left
-- `capExtra = 230`
-
-So:
-
-`extraBudget = min(540, 230) = 230`
-
-Final total becomes:
-
-`5400 + 230 = 5630`
-
-ION SHIELD INTEGRITY DAMAGE
----------------------------
-Every `Attack` mission chips Ion Shield integrity automatically based on the
-opening power of both fleets.
-
-Important live rules:
-- integrity chip damage happens on `Attack` only
-- attacker survival is not required
-- the main driver is attacker power size
-- defender power only adds a mild smooth overmatch modifier
-- integrity damage can reduce the current shield toward `0%`, but only siege
-  can actually remove shield levels
-
-Exact formula:
-
-`baseDamagePercent = attackerPower / 45000`
-
-`overmatchRatio = attackerPower / defenderPower`
-
-`overmatchBlend = overmatchRatio / (overmatchRatio + 1)`
-
-`overmatchFactor = 0.90 + (1.10 - 0.90) * overmatchBlend`
-
-`integrityDamagePercent = baseDamagePercent * overmatchFactor`
-
-That means overmatch only shifts the result inside a narrow `0.90x` to `1.10x`
-band.
-
-WORKED EXAMPLE: INTEGRITY DAMAGE
---------------------------------
-Suppose:
-- attacker opening power = `90,000`
-- defender opening power = `90,000`
-
-Step 1: base damage
-
-`baseDamagePercent = 90000 / 45000 = 2.0`
-
-Step 2: overmatch
-
-`overmatchRatio = 90000 / 90000 = 1.0`
-
-`overmatchBlend = 1 / (1 + 1) = 0.5`
-
-`overmatchFactor = 0.90 + 0.20 * 0.5 = 1.0`
-
-Step 3: final integrity damage
-
-`integrityDamagePercent = 2.0 * 1.0 = 2.0`
-
-That attack removes `2%` Ion Shield integrity even if the attackers are wiped
-out during the battle.
-
-SIEGE: HOW BUILDINGS ACTUALLY DIE
----------------------------------
-Siege only matters on `Attack` missions.
-
-If you bring no siege ships, you may still win the fleet battle but fail to
-break the base.
-
-Exact siege flow:
-1. compute raw siege from the initial siege-capable ships
-2. apply fleet siege multiplier
-3. reduce the result if many siege ships died
-4. reduce by `25%` if the defender has `Stasis Bastion`
-5. spend the final siege budget on building levels one by one
-
-Raw siege:
-
-`rawSiege = sum(shipCount * SiegeStat * carrierBuffIfNonCarrier)`
-
-Fleet siege multiplier:
-
-`siegeAfterMultiplier = rawSiege * fleetSiegeMultiplier`
-
-Survival scaling:
-
-`survivalScale = max(0.2, survivingSiegeUnits / initialSiegeUnits)`
-
-`finalSiegeBudget = siegeAfterMultiplier * survivalScale`
-
-If the defender has `Stasis Bastion`:
-
-`finalSiegeBudget = finalSiegeBudget * 0.75`
-
-BUILDING LEVEL COST TO DESTROY
-------------------------------
-Each destroyed building level consumes:
-
-`0.40 * buildCostOfThatLevelAcrossAllResources`
-
-The game keeps deleting levels until the siege budget runs out.
-
-If no preferred building was selected, the game auto-targets the highest-level
-building on the base.
-
-If every building on a non-spawn base is reduced to level `0`, the base is
-removed.
-
-SIEGE LESSONS
--------------
-1. Winning the ship battle is not the same thing as breaking the colony.
-
-2. If you want structural damage, bring enough siege and protect it.
-
-3. Carriers slightly improve siege because non-carrier siege ships receive the
-   aura.
-
-4. A defender with `Stasis Bastion` forces noticeably more commitment.
-
-SPY MISSIONS
-------------
-Spy fleets require `Intelligence` ships only.
-
-Spy travel uses the normal fleet travel formula, except:
-- `Whisper Relay` gives `+20%` spy travel speed
-- Veil `Eclipse Ascension` on the Espionage path makes spy travel effectively
-  instant at `1 second`
-
-SPY SURVIVAL RULE
------------------
-The game calculates a survival chance, then converts defender spy resistance
-into attacker losses.
-
-Exact rule:
-
-`survival = clamp(0.65 + spySurvivalBonus, 0.05, 0.95)`
-
-`attackerSpyLosses = ceil((defenderSpyDefensePower / 12.0) * (1 - survival))`
-
-Losses can never exceed the number of attacking spy ships.
-
-WORKED EXAMPLE: SPY LOSSES
---------------------------
-Suppose:
-- your empire has `+0.12` spy survival from SPUs and directive buffs
-- defender spy-defense power is `24`
-- you launch `6` intelligence ships
-
-Step 1: survival
-
-`survival = clamp(0.65 + 0.12, 0.05, 0.95)`
-`survival = 0.77`
-
-Step 2: losses
-
-`attackerSpyLosses = ceil((24 / 12.0) * (1 - 0.77))`
-`attackerSpyLosses = ceil(2.0 * 0.23)`
-`attackerSpyLosses = ceil(0.46)`
-`attackerSpyLosses = 1`
-
-So that spy mission loses `1` ship and returns with `5`.
-
-WHY DEFENDERS SURVIVE RAIDS
----------------------------
-Defenders are hardest to crack when several systems stack:
-- mixed light and heavy hulls
-- Ion Shield
-- loot dampening through Nano Storage
-- shipyards nearby for fast reinforcement
-- enough Astra that upkeep never chokes the garrison
-
-That combination does more than inflate one number.
-It changes the entire cost equation of attacking you.
+06) 습격, 공성, 첩보
+-------------------
+
+습격
+----
+습격은 자원만 훔치는 것이 아닙니다. 상대의 시간, 주의력, 계획을 훔칩니다.
+
+성공적인 습격:
+- 목표 저장고가 충분히 차 있습니다.
+- 이동 시간이 짧거나 예측하기 어렵습니다.
+- 정찰로 방어 상태를 확인했습니다.
+- 귀환 후 자원을 담을 저장 공간이 있습니다.
+
+실패하는 습격:
+- 같은 항로를 반복합니다.
+- 수입 없이 무리하게 확장한 상태에서 함대를 멀리 보냅니다.
+- 전리품보다 손실이 큽니다.
+
+공성
+----
+공성은 건물 레벨을 늦추는 도구입니다. 공성함은 보호받아야 하고, 목표는 분명해야 합니다.
+
+좋은 공성 목표:
+- 조선소
+- 중앙 첨탑
+- 저장 기반
+- 방어막
+- 문화별 핵심 건물
+
+첩보
+----
+첩보는 싸움을 대신 이겨주지 않지만, 지는 싸움을 피하게 해줍니다.
+
+첩보로 확인할 것:
+- 주둔 함대
+- 방어막 상태
+- 주요 건물 레벨
+- 활성 항로
+- 상대가 비운 전선
+
+첩보 주기
+---------
+첩보 보고서는 순간 사진입니다. 오래된 정보는 위험합니다. 공격 직전, 공성 직전, 큰 확장 직전에는 새 정보를 확인하세요.
+
+세 도구의 연결
+--------------
+첩보가 목표를 찾고, 습격이 시간을 훔치며, 공성이 상대의 미래를 늦춥니다. 셋을 섞으면 작은 함대도 큰 압박을 만들 수 있습니다.

@@ -1,133 +1,64 @@
-01) PLAYING THE GAME
---------------------
+01) 게임 플레이
+---------------
 
-WHAT KIND OF STRATEGY GAME THIS IS
-----------------------------------
-Riftborne is a real-time simulation strategy game built around economy tempo,
-fleet pressure, objective control, and map control.
+이 게임은 어떤 전략 게임인가
+----------------------------
+Riftborne은 실시간 시뮬레이션 전략 게임입니다. 경제 템포, 함대 압박, 목표 장악, 지도 통제가 승패를 만듭니다.
 
-Winning play links resource growth, expansion timing, travel speed, and fleet
-pressure into control of the center, then converts that control through the
-Origin Wormhole or faction Keystone Visions.
+승리하는 플레이는 자원 성장, 확장 타이밍, 이동 속도, 함대 압박을 하나로 묶습니다. 중앙을 장악한 뒤 기원 웜홀이나 세력 키스톤 비전으로 그 장악을 승리로 바꾸는 것이 핵심입니다.
 
-STANDARD NEW CAMPAIGN DEFAULTS
-------------------------------
-The standard campaign starts with these default settings:
-- Base production: `1,000` per hour for each core resource
-- Storage target at level 5: `5,000` per resource
-- Storage target at level 20: `100,000` per resource
-- Resource-building target at level 20: `10,000` per hour per resource
-- Global fleet travel multiplier: `3.0x`
-- Global attack multiplier: `1.0x`
-- Global defense multiplier: `1.0x`
+표준 새 캠페인 기본값
+---------------------
+- 기본 생산: 핵심 자원마다 시간당 `1,000`
+- 5레벨 저장 목표: 자원마다 `5,000`
+- 20레벨 저장 목표: 자원마다 `100,000`
+- 20레벨 생산 건물 목표: 자원마다 시간당 `10,000`
+- 전역 함대 이동 배율: `3.0x`
+- 전역 공격 배율: `1.0x`
+- 전역 방어 배율: `1.0x`
 
-Your first base starts stronger than later colonies:
+첫 기지는 이후 식민지보다 강하게 시작합니다.
 - `Silo 5`
 - `Solar Cell 5`
-- all four resources filled to current storage cap
+- 네 핵심 자원이 현재 저장 상한까지 가득 참
 
-That strong opening stock is intentional.
-It lets you start building immediately instead of waiting for the first trickle
-of income.
+이 강한 시작 비축량은 의도된 것입니다. 첫 수입을 기다리는 대신 즉시 건설을 시작하라는 뜻입니다.
 
-NO OFFLINE CATCH-UP
--------------------
-Saved campaigns resume at the exact saved simulation time.
-There is no automatic offline income burst when you continue a save.
+오프라인 보상 없음
+------------------
+저장된 캠페인은 정확히 저장된 시뮬레이션 시간에서 재개됩니다. 저장을 닫아 둔 동안 자동으로 수입이 몰려오지 않습니다.
 
-Practical meaning:
-- if you log out with queues half done, they are still half done when you return
-- if you save while vulnerable, you load while vulnerable
-- if you want Astra safety, shield safety, or queue depth, build it before you
-  exit
+실전 의미:
+- 대기열이 절반 남은 채로 종료하면 돌아왔을 때도 절반 남아 있습니다.
+- 취약한 상태로 저장하면 취약한 상태로 불러옵니다.
+- 아스트라 안전, 방어막 안전, 대기열 여유가 필요하다면 종료 전에 만들어 두세요.
 
-THE CORE FLOW OF A MATCH
-------------------------
-Early game:
-- reach `Central Spire 5` quickly enough to unlock the first strategic outpost
-- turn your home base and first outpost into real resource throughput
-- use infrastructure, raids, or both to lift income beyond the starting stock
-- scout your local ring and decide whether you can expand greedily or must
-  respect a nearby threat
-- keep Astra positive while the first ship queues come online
+경기의 핵심 흐름
+----------------
+초반:
+- `Central Spire 5`에 빠르게 도달해 첫 전략 전초기지를 해금합니다.
+- 본거지와 첫 전초기지를 실제 자원 처리량으로 바꿉니다.
+- 기반 시설, 습격, 또는 둘 다로 시작 비축량 이상의 수입을 만듭니다.
+- 주변 고리를 정찰하고 탐욕 확장이 가능한지, 가까운 위협을 존중해야 하는지 판단합니다.
+- 첫 함선 대기열이 돌아가는 동안 아스트라를 양수로 유지합니다.
 
-Midgame:
-- hit `Central Spire 20` on a base that can launch and defend new colonies
-- push strong colonies beyond `Central Spire 20` when you need more strategic
-  outposts or asteroid mining sites from the same origin
-- turn outposts, colonies, and trade routes into a stronger logistics network
-- split bases into roles instead of making every colony mediocre
-- use raids and selective attacks to slow rivals, clear lanes, and take out
-  exposed competitors without overcommitting
+중반:
+- 새 식민지를 발진시키고 지킬 수 있는 기지에서 `Central Spire 20`에 도달합니다.
+- 더 많은 전초기지나 채굴지를 열어야 한다면 강한 식민지를 `Central Spire 20` 이상으로 밀어 올립니다.
+- 전초기지, 식민지, 무역로를 더 강한 군수망으로 묶습니다.
+- 모든 식민지를 어중간하게 만들지 말고 역할을 나눕니다.
+- 습격과 선택적 공격으로 경쟁자를 늦추고, 항로를 정리하고, 노출된 상대를 제거합니다.
 
-Late game:
-- stop thinking only in terms of income and start thinking in terms of travel
-  time, launch distance, objective pressure, and core control
-- prepare a base or cluster that can actually hold central pressure
-- contest `(0,0)` only when your economy can survive the retaliation
-- clear and hold Keystone sites when your faction is ready to fund their Vision
-  conversion
+후반:
+- 수입만 보지 말고 이동 시간, 발진 거리, 목표 압박, 중앙 통제를 함께 봅니다.
+- 중앙 압박을 실제로 버틸 기지나 기지 묶음을 준비합니다.
+- 경제가 보복을 버틸 수 있을 때만 `(0,0)`을 겨룹니다.
+- 세력이 비전 전환 비용을 감당할 준비가 되면 키스톤 지점을 정리하고 지킵니다.
 
-YOUR FIRST SESSION: A SAFE PLAYBOOK
------------------------------------
-1. Spend the full starting stock.
-   A full warehouse that is doing nothing is wasted tempo.
-
-2. Build Central Spire earlier than feels comfortable.
-   Expansion is hard-gated by Spire milestones, so a late Spire means a late
-   outpost, a late colony, and a late everything.
-
-3. Get real resource throughput online immediately.
-   Early game is about the first mining outpost plus infrastructure or raids
-   that keep production climbing.
-
-4. Keep Astra stable while ship training starts.
-   Astra pays ship upkeep, fuels Solar scaling, and is still the fastest way to
-   lose a stable empire if you ignore it.
-
-5. Build the right Shipyards before you think you need them.
-   Each hull family uses its own shipyard for training and travel tempo, so
-   shipyards still improve offense, defense, logistics, and reaction time.
-
-6. Scout before you commit.
-   Many losing attacks start as "I assumed that base was weak."
-
-7. Expand where the lane is defensible, not only where the tile is rich.
-   A rich colony that you cannot reinforce is often just free loot for someone
-   else.
-
-8. Treat Keystone funding as a timing decision, not an automatic rush.
-   A Keystone that starves your build tempo is weaker than one backed by a real
-   economy and enough defense to hold it.
-
-WHAT GOOD PROGRESSION LOOKS LIKE
---------------------------------
-You are usually in a strong position when:
-- Astra stays positive even while training ships
-- at least one base has meaningful ship throughput
-- at least one base is pushing toward outposts or colonies
-- you can replace raid losses quickly
-- you know which rival is the nearest real threat
-
-You are usually in a fragile position when:
-- Astra is near zero
-- every base is trying to do every job
-- you have no fast-response base
-- you are funding objectives too early and military too late
-- you are launching fleets without current intel
-
-A USEFUL HOURLY PLANNING QUESTION
---------------------------------
-Keep asking:
-"What is my empire trying to become over the next 2 to 4 launch windows?"
-
-Examples of solid planning answers:
-- "A safer economic cluster that can afford a second colony."
-- "A raid engine that punishes exposed Astra."
-- "A fortress line that buys time for Keystone conversion."
-- "A fast-response network that can reach the central ring first."
-
-Answers that often signal drift:
-- "I am upgrading whatever I can afford."
-- "I am building every nice-looking structure equally."
-- "I will attack when the queue finishes, even if the target changes."
+첫 세션 안전 플레이북
+---------------------
+1. 시작 비축량을 모두 쓰세요. 가득 찬 창고가 놀고 있으면 템포가 낭비됩니다.
+2. 불편할 정도로 일찍 중앙 첨탑을 올리세요. 첨탑이 늦으면 전초기지, 식민지, 모든 것이 늦어집니다.
+3. 실제 자원 처리량을 즉시 켜세요. 생산과 저장 상한이 같이 올라야 합니다.
+4. 첫 함선은 정찰과 억제용입니다. 보이는 적보다 보이지 않는 정보 부족이 더 위험합니다.
+5. 한 시간 뒤 필요한 것을 지금 짓고 있는지 계속 확인하세요.

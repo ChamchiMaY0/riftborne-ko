@@ -1,256 +1,57 @@
-04) SHIPS, FLEETS, AND MOVEMENT
---------------------------------
+04) 함선, 함대, 이동
+--------------------
 
-THE ROSTER LOGIC
-----------------
-Every culture fields the same broad battlefield jobs:
-- `Intelligence`: spy and recon hulls
-- `Drone` / `Skirmisher` / `Corvette`: fast light pressure and tracking support
-- `Starfighter` / `Gunship` / `Cruiser` / `Destroyer` / `Capital`: main combat
-  line with different target preferences
-- `Carrier`: weak direct statline, but buffs every non-carrier in the fleet
-- `Siege`: building-breaker
-- `Colonization`: expansion hull
-- `Flagship`: custom late-game apex hull
-
-SHIP COST: THE EXACT RULE
--------------------------
-Each hull has a base cost number in the live roster data.
-The actual per-resource build cost is derived from that number.
-
-Base weight rule:
-- Vulkron  = `baseCost * 1.25`
-- Aurelite = `baseCost * 0.95`
-- Deuterium = `baseCost * 0.95`
-- Astra = `baseCost * 0.85`
-
-Then each culture gets a `50%` discount on one resource:
-- Astraean -> Aurelite
-- Varkon -> Vulkron
-- Veil -> Deuterium
-
-WORKED EXAMPLE: REAL SHIP COST
-------------------------------
-Take the Astraean `Comet Rapier`, which has a base cost of `84`.
-
-Step 1: apply universal weights
-
-`Vulkron  = 84 * 1.25 = 105.0`
-`Aurelite = 84 * 0.95 = 79.8`
-`Deuterium = 84 * 0.95 = 79.8`
-`Astra = 84 * 0.85 = 71.4`
-
-Step 2: apply the Astraean discount on Aurelite
-
-`Aurelite = 79.8 * 0.5 = 39.9`
-
-Final Astraean Comet Rapier cost:
-- `105.0 Vulkron`
-- `39.9 Aurelite`
-- `79.8 Deuterium`
-- `71.4 Astra`
-
-TRAINING TIME: THE EXACT RULE
------------------------------
-For ships, the game uses:
-
-`actualPerUnitTime = listedPerUnitTime / ShipBuildSpeedMultiplier`
-
-Then unit-specific SPU training bonuses apply:
-
-`actualPerUnitTime = actualPerUnitTime / (1 + unitTrainingBonus)`
-
-The result cannot go below `1 second` per unit.
-
-Ship build speed comes from:
-- the relevant shipyard for that hull family
-- some Eldritch upgrades
-- SPUs
-- Astraean penalty
-
-Important culture rule:
-- Astraean empires multiply ship build speed by `0.70`
-- that means Astraean ship queues are slower unless boosted elsewhere
-
-TRAINING LANES
---------------
-Training is split by hull family, not by one global queue.
-
-Each completed production building adds one lane for its own family:
-- each `Light Shipyard` copy adds one light/intelligence lane
-- each `Heavy Shipyard` copy adds one heavy/cargo/colonization lane
-- each `Siege Foundry` copy adds one bomber/siege lane
-
-That means a base can naturally train in parallel across light, heavy, and
-siege families once those buildings exist.
-
-If a base has `Eldritch Conduit` plus `Riftwalk Logistics`, the lane count for
-each unlocked hull family is doubled.
-
-That upgrade is a major tempo spike because one specialized base can keep
-multiple answers building at once inside the same hull family.
-
-FLEET MOVEMENT: THE REAL FORMULA
---------------------------------
-The fleet uses the slowest ship in the group after modifiers.
-
-Exact rule:
-
-`travelHours = distance / (slowestShipSpeed * baseTravelMultiplier * globalTravelMultiplier)`
-
-Where:
-- `slowestShipSpeed` already includes carrier aura and unit speed SPUs
-- `baseTravelMultiplier` comes from the relevant shipyard, SPUs, and some Eldritch upgrades
-- `globalTravelMultiplier` is `3.0x` in the standard campaign
-- minimum fleet travel time is `0.01h`
-
-WORKED EXAMPLE: FLEET MOVEMENT
-------------------------------
-Suppose a fleet must cross distance `30`.
-
-The slowest ship after all ship-level modifiers is speed `5.0`.
-The origin has `Heavy Shipyard 10`, so:
-
-`baseTravelMultiplier = 1.0 + (0.10 * 10) = 2.0`
-
-No other launch bonuses apply, and the campaign uses the standard global
-travel multiplier:
-
-`globalTravelMultiplier = 3.0`
-
-Now calculate:
-
-`travelHours = 30 / (5.0 * 2.0 * 3.0)`
-`travelHours = 30 / 30`
-`travelHours = 1.0`
-
-That fleet arrives in exactly `1 hour`.
-
-CARRIER AURA
-------------
-Carriers buff every non-carrier in the fleet.
-
-Exact rule:
-
-`carrierBuff = 1.0 + (carrierCount * 0.0001)`
-
-Then every non-carrier stat contribution that uses `BuffForUnit(...)` is
-multiplied by that value.
-
-Important:
-- carriers do not buff themselves
-- the aura is small per carrier, but it affects attack, defense, speed, cargo,
-  and siege calculations wherever the unit stat is sampled
-
-CARGO CAPACITY
---------------
-Fleet cargo capacity is:
-
-`sum(shipCount * shipCargo * carrierBuffIfNonCarrier) * fleetCargoMultiplier`
-
-`fleetCargoMultiplier` can come from:
-- Orbital Exchange level at launch base
-- Veil `Rift Cargo Manifolds`
-- SPU fleet cargo bonuses
-
-Cargo matters for:
-- raids
-- manual shipments
-- marketplace trades
-
-Important:
-- `Orbital Exchange` improves launched-fleet cargo directly
-- the same building also speeds up logistics travel for transfers, trade
-  routes, and marketplace fulfillment
-
-MISSION TYPES
--------------
-
-ATTACK
-- Full battle.
-- One side is forced to break completely.
-- Best for conquest, decisive punishes, and base destruction through siege.
-
-RAID
-- Softer casualty rules.
-- Used to steal resources without always committing to a wipe battle.
-- Hidden resources, cargo limits, and raid multipliers matter more than raw
-  brute force alone.
-
-REINFORCE
-- Move ships into another garrison.
-- Best used to harden exposed bases before a real war starts.
-
-COLONIZE
-- Requires at least one `Colonization` hull.
-- If the destination is empty and legal, a colony is founded and one colony hull
-  is consumed.
-- If the destination is hostile and occupied, the colonization fleet fights.
-
-SPY
-- Requires `Intelligence` ships only.
-- Used to reveal real base state before you launch a larger fleet.
-
-TRADE SHIPMENTS AND MARKET TRAVEL
----------------------------------
-Manual shipments and accepted marketplace trades use a dedicated logistics speed:
-
-`tradeSpeed = 5.0 * baseTravelMultiplier * globalTravelMultiplier * shipmentSpeedMultiplier`
-
-Where:
-- `baseTravelMultiplier` comes from the relevant shipyard/travel bonuses
-- `shipmentSpeedMultiplier` includes `Orbital Exchange` and any other logistics
-  shipment-speed bonuses
-
-Then:
-
-`travelHours = distance / max(0.1, tradeSpeed)`
-
-This means shipping speed is not tied to the specific cargo hull's listed ship
-speed. It is tied to the logistics rule above plus the source base's travel
-multipliers.
-
-FLEET-BUILDING ADVICE
----------------------
-1. Do not build only heavy ships.
-   You still need tracking, speed, and a light screen.
-
-2. Do not raid with fleets that cannot carry meaningful loot.
-   Winning a battle and carrying home almost nothing is a tempo trap.
-
-3. Siege ships belong in attack fleets, not every fleet.
-   If the goal is loot or scouting pressure, spare yourself the speed penalty.
-
-4. Colonization hulls are strategic cargo.
-   Do not float them around casually on exposed lanes.
-
-5. Intelligence is not optional.
-   Spy hulls save more ships than they cost.
-
-CULTURE IDENTITY AT A GLANCE
-----------------------------
-
-ASTRAEAN
-- slower builders
-- strong utility, cargo, tracking, and flexible line pieces
-- good for measured expansions and efficient mixed fleets
-
-VARKON
-- attack and raid fleets gain a huge `3.0x` attack multiplier
-- best culture for decisive committed violence
-- strongest when fights happen on purpose, not by accident
-
-VEIL
-- fastest strategic toolkit
-- best at tempo tricks, evasion, raid shaping, shard economy, and launch-base
-  specialization
-
-WHEN TO ADD A FLAGSHIP
+함대는 자원의 이동 형태
 ----------------------
-Add a flagship when:
-- the research base is safe
-- the rest of your empire already works
-- you know what stat profile your current match actually needs
+함선은 공격력만이 아닙니다. 이동 시간, 귀환 시간, 화물, 생존성, 발진 위치가 모두 전력입니다.
 
-Do not start flagship plans so early that they delay shipyard tempo, Spire progress,
-or the first serious fleet.
+주요 함선 역할
+--------------
+- 경전투기: 빠른 초반 압박과 방어 보조
+- 중전투기: 안정적인 전투력
+- 폭격기: 노출된 기반 시설 타격
+- 드론: 수량과 보조 압박
+- 호위함: 빠른 도착과 선제 대응
+- 구축함: 버티는 전선
+- 초계함: 빠른 압박
+- 건쉽: 전술 화력
+- 순양함: 결정적 공세의 중심
+- 주력함: 대형 전투의 선언
+- 항공모함: 생산과 장기 압박의 확장
+- 개척선: 지도와 미래 생산을 바꾸는 함선
+- 첩보선: 모르는 것을 줄이는 함선
+- 공성함: 건물 레벨을 실제로 위협하는 도구
+
+이동 시간
+---------
+가까운 기지는 약한 함대도 위협적으로 만듭니다. 먼 기지는 강한 함대도 늦게 만듭니다.
+
+이동 전 질문:
+- 도착할 때도 상황이 같을까
+- 귀환할 때 화물이 안전할까
+- 지원군이 올 수 있을까
+- 이 발진이 다른 전선을 비우는가
+
+임무 유형
+---------
+공격:
+상대 함대와 기지를 직접 압박합니다. 이길 수 있는 전투보다 이겨야 하는 전투를 고르세요.
+
+습격:
+자원과 시간을 훔칩니다. 정찰 없이 반복하면 항로가 읽힙니다.
+
+공성:
+건물 레벨을 노립니다. 확실한 목표와 충분한 보호가 필요합니다.
+
+지원:
+전투를 바꾸거나 피해를 줄입니다. 늦은 지원군은 목격자가 됩니다.
+
+귀환:
+전리품과 함대를 되돌립니다. 조용하지만 모든 계획의 절반입니다.
+
+함대 운용 원칙
+--------------
+- 예비 함대를 남겨 두세요.
+- 한 번 이긴 항로를 영원히 안전하다고 믿지 마세요.
+- 움직이는 함대는 공격 수단이자 표적입니다.
+- 조선소가 쉬면 상대가 시간을 얻습니다.

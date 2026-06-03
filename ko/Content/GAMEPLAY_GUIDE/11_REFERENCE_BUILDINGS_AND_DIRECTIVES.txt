@@ -1,110 +1,42 @@
-11) REFERENCE: BUILDINGS AND DIRECTIVES
----------------------------------------
+11) 건물과 지령 참고
+-------------------
 
-BUILDINGS
----------
+핵심 건물 참고
+--------------
+- 중앙 첨탑: 확장과 주요 해금의 중심
+- 사일로: 저장 상한 증가
+- 태양 전지: 저장과 경제 안정성
+- 생산 건물: 시간당 자원 수입
+- 조합기/합성 계열: 자원 흐름 최적화
+- 조선소: 함선 생산
+- 이온 방어막: 방어 시간 확보
+- 궤도 거래소: 시장과 자원 유연성
+- 변환하는 공허: 자원 변환
+- 섬뜩한 도관: 전투 기세와 특수 성장
+- 다이슨 스피어: 장기 성장과 후반 계획
 
-RESOURCE AND STORAGE
-- Extractor (max 20): increases Vulkron output by the campaign's normal
-  per-level resource bonus
-- Synthesiser (max 20): increases Aurelite output by the campaign's normal
-  per-level resource bonus
-- Combinator (max 20): increases Deuterium output by the campaign's normal
-  per-level resource bonus
-- Solar Array (max 20): increases Astra output by the campaign's normal
-  per-level resource bonus
-- Dyson Sphere (max 200): uses the same per-level Astra bonus, but with a much
-  higher cap as the late-game sink
-- Silo (max 20): storage for Vulkron, Aurelite, and Deuterium
-- Solar Cell (max 20): storage for Astra
+지령 경로 참고
+--------------
+- 신호 지도 제작자: 첩보와 정보 우위
+- 공허 약탈자: 습격과 약탈 압박
+- 아이기스 선봉대: 직접 전투와 군사력
+- 태양 장부: 경제 성장과 저장 규율
+- 성간항로 중개인: 시장 거래와 유동성
+- 컨소시엄 창립자: 조직, 계약, 지분
+- 개척 승천자: 확장, 식민지, 중앙 장악
+- 대장간 설계자: 산업 깊이와 거대구조
+- 보루 감시자: 방어, 지원, 생존
+- 흐름 병참관: 무역로, 수송, 군수
+- 녹티움 장인: 채굴 전초기지와 SPU
 
-COMMAND AND TEMPO
-- Central Spire (max 25): +10% build speed per level; L5, L10, L15, and
-  L21-L25 each unlock one generic outpost slot from that origin, and L20
-  unlocks one new-colony slot
-- Light Shipyard (max 20): +10% light/intelligence build and travel speed per level, plus +2% light-hull stats per level
-- Heavy Shipyard (max 20): +10% heavy/cargo/colonization build and travel speed per level, plus +2% heavy-hull stats per level
-- Siege Foundry (max 20): +10% bomber/siege build and travel speed per level, plus +2% siege-hull stats per level; bombers unlock at L5 and siege hulls at L15
-- Orbital Exchange (max 20): +1% launched-fleet cargo per level and +1% logistics shipment speed per level
-- Flagship Research (max 5): +15% research speed and +3% build speed per
-  level
-- Objective structures:
-  - Origin Wormhole at `(0,0)` (max 100), gated by Silo and Solar Cell
-  - Keystone Vision on Keystone colonies (max 100), converts donated Noctmarks
-    into Keystone Visions over time
+빠른 판단표
+-----------
+수입이 부족하다면 생산 건물과 무역을 봅니다.
+저장고가 자주 찬다면 사일로와 태양 전지를 봅니다.
+공격이 늦다면 발진 거리와 함대 속도를 봅니다.
+전투가 불리하다면 첩보, 방어막, 구성 비율을 봅니다.
+목표가 흐리다면 지령 경로와 승리 조건을 다시 봅니다.
 
-DEFENSE AND SUSTAIN
-- Ion Shield (max 20): culture-scaled shield strength
-  - Astraean: +7.5% defense and +75 flat defense per level (2.5x at L20)
-  - Varkon: +1% defense and +10 flat defense per level (1.2x at L20)
-  - Veil: +5% defense and +50 flat defense per level (2.0x at L20)
-- Nano Storage (max 20): `cargoPenalty = min(0.80, 0.04 * level)`
-- Drone Facility (max 20): `upkeepReduction = min(0.80, 0.04 * level)`
-
-CULTURE BUILDINGS
-- Overclocker (Astraean, max 20): boosts all four resource outputs. In any
-  save, each level gives half of that save's normal resource-building bonus.
-- Conscription Service (Varkon, max 20): active `+10% * level` attack.
-  Window scales `15m` at L1 to `4h` at L20; cooldown after the window scales
-  `24h` at L1 to `16h` at L20. Costs `200 * level` of each core resource.
-- Eldritch Conduit (Veil, max 20): unlocks shard-based base upgrades
-- Transmuting Void (Veil, max 20): convert mixed resources into one chosen
-  resource at `1:1` total volume; duration 6h -> 15m
-
-OUTPOST BUILDINGS
-- Drill (outpost only, max 20): minute mining chance from 5% to 100%
-- Refiner (outpost only, max 20): hourly SPU crafting and hourly Noctmark
-  mint checks
-
-DIRECTIVE PATHS
----------------
-All 12 directive paths progress in parallel.
-Each path has 10 stages.
-Completing a path grants a permanent buff.
-
-- INTEL / Signal Cartographer
-  Buff: +12% spy survival
-
-- RAIDER / Void Reaver
-  Buff: +10% raid loot
-
-- FIGHTER / Aegis Vanguard
-  Buff: +8% fleet attack
-
-- ECON / Solar Ledger
-  Buff: +6% base production
-
-- DIPLO / Concord Envoy
-  Buff: +20% diplomacy penalty resistance
-
-- TRADER / Starlane Broker
-  Buff: +8% fleet cargo
-
-- BIZ / Consortium Founder
-  Buff: +8% base storage
-
-- EXPAND / Frontier Ascendant
-  Buff: +8% travel speed
-
-- INDUSTRY / Forge Architect
-  Buff: +8% build speed and +8% ship-build speed
-
-- DEFENSE / Bastion Warden
-  Buff: +10% base defense and +6% fleet defense
-
-- LOGI / Flux Quartermaster
-  Buff: +10% travel speed and +6% fleet cargo
-
-- AUGMENT / Noctium Artificer
-  Buff: +8% research speed and +10% transmute speed
-
-QUICK REMINDERS
----------------
-- Directive stages auto-complete. There is no claim action.
-- Central Spire outpost slots unlock at L5, L10, L15, and L21-L25; each slot
-  can be spent on a strategic, asteroid mining, or rare-metal mining outpost.
-- Central Spire 20 unlocks one child colony from that origin.
-- Shipyards are the highest-value tempo buildings for most war plans.
-- Ion Shield, Nano Storage, and Astra safety multiply each other.
-- Objective wins happen only when the map state can defend the Wormhole or
-  Keystone plan.
+마지막 조언
+-----------
+Riftborne은 거대한 한 수보다 작은 시간표의 연속에 가깝습니다. 지금 한 대기열, 한 항로, 한 정찰이 나중의 전쟁을 결정합니다.

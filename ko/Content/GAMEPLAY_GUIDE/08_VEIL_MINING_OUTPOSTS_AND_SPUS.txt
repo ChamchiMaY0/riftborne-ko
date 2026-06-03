@@ -1,265 +1,38 @@
-08) VEIL, MINING OUTPOSTS, AND SPUS
------------------------------------
+08) 장막, 채굴 전초기지, SPU
+---------------------------
 
-VEIL SOUL SHARDS
-----------------
-Soul shards are a shared player-wide currency for Veil commanders.
+채굴 전초기지
+-------------
+채굴 전초기지는 단순 수입원이 아니라 증강 경제의 입구입니다. 전초기지는 지도 장악, 희귀 자원, 장기 성장의 발판이 됩니다.
 
-Exact combat rule:
-- each unit kill grants `1` soul shard
-- a Veil attacker gets shards for the kills it causes
-- a Veil defender gets shards for the kills it causes
-
-Those shards go into one shared vault across the whole empire.
-
-TITHE OF THE FALLEN
--------------------
-`Tithe of the Fallen` no longer converts shards into faction visions. Normal
-colony vision infrastructure has been retired; Keystone Visions now come from
-Noctmark donations to controlled Keystone colonies.
-
-ELDRITCH CONDUIT UPGRADE SHOP
------------------------------
-Each upgrade is bought for soul shards and applies only to that base unless the
-description says otherwise.
-
-UPGRADE LIST
-------------
-- `Shadow Hoard` (`4,600`): hide `+20%` resources from raids, still capped at
-  `95%`
-- `Veil Siphon` (`6,000`): raids from this base steal `+20%` more resources
-- `Whisper Relay` (`4,800`): spy fleets from this base travel `+20%` faster
-- `Nullwake Drives` (`5,500`): all fleets from this base travel `+20%` faster
-- `Phase Foundry` (`5,000`): ship training speed at this base `+20%`
-- `Gloom Ward` (`5,200`): base defense multiplier `+20%`
-- `Spectral Targeting` (`4,400`): launched fleets gain `+5` tracking
-- `Shiver Screens` (`4,400`): launched fleets gain `+5` evasion
-- `Crit-Chain Doctrine` (`5,800`): launched fleets gain `+10` crit
-- `Void Siege Rites` (`6,000`): launched fleets gain `+50%` siege
-- `Umbral Stockpiles` (`5,400`): base storage `+25%`
-- `Astra Suture Seal` (`5,600`): stationed ship upkeep at this base `-20%`
-  after other reductions
-- `Obsidian Overclock` (`5,000`): building construction speed at this base
-  `+20%`
-- `Rift Cargo Manifolds` (`5,200`): launched fleets gain `+20%` cargo capacity
-- `Stolen Breath` (`5,700`): successful raids siphon extra loot after the main
-  steal
-- `Phantom Treaty` (`4,200`): attacks and raids from this base cause `80%` less
-  diplomatic penalty
-- `Stasis Bastion` (`4,800`): incoming siege budget against this base `-25%`
-- `Tithe of the Fallen` (`5,900`): retired shard-to-vision action; retained as
-  legacy upgrade data
-- `Riftwalk Logistics` (`6,000`): this base trains in `2` parallel lanes
-- `Eclipse Ascension` (`10,000`): choose one capstone path
-
-ECLIPSE ASCENSION PATHS
------------------------
-- `War`: launched fleets gain `+25%` attack and `+25%` defense
-- `Economy`: this base gains `+50%` to all four production multipliers
-- `Espionage`: spy fleets from this base travel in `1 second`
-
-TRANSMUTING VOID: THE EXACT RULE
---------------------------------
-You feed any mixture of core resources into the Transmuting Void and choose one
-output resource.
-
-Output rule:
-
-`outputAmount = totalInputAcrossAllFourResources`
-
-So if you feed:
-- `400 Vulkron`
-- `250 Aurelite`
-- `100 Deuterium`
-- `50 Astra`
-
-Then:
-
-`output = 400 + 250 + 100 + 50 = 800`
-
-You receive `800` of the chosen output resource when the process completes.
-
-TRANSMUTE DURATION CURVE
-------------------------
-The building's duration falls from `6h` at level 1 to `15m` at level 20.
-
-Examples:
-- `L1 = 360 minutes`
-- `L5 = 287.37 minutes`
-- `L10 = 196.58 minutes`
-- `L15 = 105.79 minutes`
-- `L20 = 15 minutes`
-
-WORKED EXAMPLE: TRANSMUTATION
------------------------------
-At `Transmuting Void 10`, duration is about `196.58` minutes.
-
-If you feed:
-- `600 Vulkron`
-- `300 Aurelite`
-- `100 Astra`
-
-Then:
-
-`totalInput = 600 + 300 + 100 = 1000`
-
-If you choose `Deuterium`, the result is:
-
-`1000 Deuterium` after about `196.58 minutes`
-
-When to use it:
-- to fix a bottleneck before a war timing
-- to finish a critical building or ship batch
-- to stabilize expensive objective or fleet timings
-
-When not to use it:
-- as a permanent replacement for real production specialization
-
-MINING OUTPOSTS
+녹트마크와 정제
 ---------------
-Mining outposts are special bases founded on seeded mining-site tiles.
+녹트마크는 증강과 SPU 운용에 연결되는 특수 가치입니다. 비축만 하지 말고 장착, 거래, 교체 계획과 함께 보세요.
 
-Requirements:
-- origin base needs `Central Spire 5`
-- target tile must be a mining-outpost site
-- each origin base can support one next outpost
+SPU
+---
+SPU는 함선, 경제, 군수, 전투, 첩보, 외교에 보너스를 주는 증강 장치입니다.
 
-Mining outposts do not use the normal colony economy.
-Their value comes from rare metals, Noctmarks, and SPUs.
+SPU 판단 기준:
+- 지금 계획에 직접 도움이 되는가
+- 특정 기지나 함대 역할과 맞는가
+- 더 높은 등급을 노릴 가치가 있는가
+- 시장에서 사고파는 편이 나은가
 
-DRILL: THE EXACT MINING RULE
-----------------------------
-Mining resolves in whole minutes.
+장착 원칙
+---------
+모든 보너스가 항상 같은 가치를 갖지는 않습니다.
 
-Each minute, the outpost rolls:
+예시:
+- 습격을 자주 한다면 속도, 약탈, 첩보 생존율이 좋습니다.
+- 방어전을 버틴다면 방어 배율, 방어막, 유지비 감소가 좋습니다.
+- 경제를 키운다면 생산량, 저장량, 건설 속도가 좋습니다.
+- 중앙 압박을 노린다면 이동 속도와 함대 전투 보너스가 중요합니다.
 
-`drillChance = 0.05 + ((drillLevel - 1) / 19.0) * 0.95`
+장막식 플레이
+-------------
+장막은 타이밍을 좋아합니다. 불편한 비축량을 유용한 자원으로 바꾸고, 약한 선을 습격하며, 전투가 기울 때 크게 현금화합니다.
 
-Examples:
-- `L1 = 5%` chance per minute
-- `L10 = 50%` chance per minute
-- `L20 = 100%` chance per minute
-
-WORKED EXAMPLE: DRILL 10
-------------------------
-`(10 - 1) / 19 = 9 / 19 = 0.473684`
-
-`0.473684 * 0.95 = 0.450000`
-
-`0.05 + 0.45 = 0.50`
-
-So `Drill 10` mines on exactly `50%` of minute ticks on average.
-
-DRILL UNLOCK PROGRESSION
-------------------------
-The drill auto-upgrades from lifetime metals mined:
-- below `100` total mined -> `L1`
-- `10,000` or more total mined -> `L20`
-- values in between interpolate through the middle levels
-
-REFINER AND NOCTMARK MINTING
-----------------------------
-The refiner does two separate jobs:
-
-1. SPU crafting
-- one craft attempt per hour
-
-2. Noctmark minting
-- every `1` hour
-- exact rule:
-
-  `10 Noctium -> 10 Noctmarks`
-
-Noctmarks are personal currency, not colony stock.
-
-RARE-METAL TABLES
------------------
-Each outpost site belongs to one weighted table:
-- `Echo Vein`
-- `Prismatic Lode`
-- `Xeno Shardfield`
-- `Vant Flux Rift`
-- `Radian Crucible`
-- `Noct Cache`
-
-Each table biases one or two metals.
-Example:
-- `Noct Cache` is the best raw Noctium table
-- `Echo Vein` leans Echorite
-- `Radian Crucible` leans Radianite
-
-SPU CRAFTING
-------------
-Every hour the refiner:
-1. deterministically shuffles the five craftable metals
-2. tries to include metals based on current holdings share
-3. spends one unit of each included metal
-4. creates one SPU stack
-
-If no metal is included, the SPU is errored.
-
-SPU deliveries begin every `24` hours after the first SPU is produced.
-
-SPU BONUS MAGNITUDE
--------------------
-SPUs grant passive bonuses while owned.
-
-Exact magnitude rule per stack:
-
-`bonusPerUnit = average(DrillLevel, RefinerLevel) * 0.1%`
-
-Then:
-
-`totalBonus = bonusPerUnit * stackCount`
-
-WORKED EXAMPLE: SPU MAGNITUDE
------------------------------
-Suppose a stack was crafted at:
-- `Drill 12`
-- `Refiner 8`
-
-Average level:
-
-`(12 + 8) / 2 = 10`
-
-Per-unit bonus:
-
-`10 * 0.1% = 1.0%`
-
-If you own `7` copies of that exact SPU:
-
-`1.0% * 7 = 7.0%`
-
-That stack contributes a `7%` bonus to its target stat.
-
-SPU BONUS TARGETS
------------------
-SPUs can target:
-- specific ship-class attack, defense, speed, training speed, or upkeep
-- base production
-- base storage
-- build speed
-- ship-build speed
-- travel speed
-- base defense
-- research speed
-- transmute speed
-- fleet attack, defense, siege, raid loot, or cargo
-- fleet crit, evasion, or tracking
-- spy survival
-- diplomacy penalty reduction
-
-HOW TO USE OUTPOSTS WELL
-------------------------
-1. Think of outposts as an economy layer above normal colonies, not as tiny
-   frontline planets.
-
-2. Protect the origin colony that feeds the outpost.
-   If the origin collapses, the outpost becomes awkward to support.
-
-3. Chase tables that match your current plan:
-- Noctium if you want Noctmarks
-- specific craft metals if you want strong SPU stacking
-
-4. Do not ignore daily delivery timing.
-   SPU power arrives in waves, so time purchases and launches around that.
+주의점
+------
+증강은 계획을 대체하지 않습니다. 나쁜 경제에 좋은 SPU를 얹어도 병목은 남습니다. 먼저 수입, 저장, 항로를 안정화한 뒤 SPU로 방향성을 강화하세요.

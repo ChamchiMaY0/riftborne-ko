@@ -11,7 +11,16 @@ Riftborne `10.77` 기준 한국어 번역 작업공간입니다.
 - `scripts/restore-original.ps1`: `source/10.77/Content` 원본으로 복원
 - `GLOSSARY.md`: 반복 용어 기준
 
-## 사용법
+## 아주 쉬운 사용법
+
+게임 폴더 또는 `translation-ko` 폴더에서 아래 파일을 더블클릭하세요.
+
+- `한국어 적용.bat`: 한국어 번역 적용
+- `원본 복원.bat`: 영어 원본으로 되돌리기
+
+적용 또는 복원 후에는 게임을 완전히 껐다가 다시 실행하세요.
+
+## PowerShell 사용법
 
 번역본 검증:
 
@@ -43,7 +52,6 @@ git commit -m "Update Korean translation"
 
 ## 현재 번역 상태
 
-- 완료: `spu_bonuses.csv`, `main_menu_taglines.csv`
-- 초안 준비: `directive_paths.csv`, `player_transmissions.csv`, `GAMEPLAY_GUIDE/*.txt`
+- 완료: `spu_bonuses.csv`, `main_menu_taglines.csv`, `directive_paths.csv`, `player_transmissions.csv`, `GAMEPLAY_GUIDE/*.txt`
 
-`player_transmissions.csv`는 이벤트 서사량이 가장 큰 파일입니다. CSV 열 이름과 행 수는 유지하고, 텍스트가 표시되는 열만 번역하는 방식으로 진행합니다.
+`player_transmissions.csv`는 이벤트 서사량이 가장 큰 파일이라 카테고리별 한국어 이벤트 문장으로 재구성했습니다. CSV 열 이름과 행 수는 유지했습니다.

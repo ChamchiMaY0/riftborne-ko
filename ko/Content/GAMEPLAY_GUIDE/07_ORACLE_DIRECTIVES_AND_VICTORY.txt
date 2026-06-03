@@ -1,136 +1,39 @@
-07) OBJECTIVES, DIRECTIVES, AND VICTORY
----------------------------------------
+07) 오라클 지령과 승리
+---------------------
 
-VICTORY: THE CURRENT RULE
--------------------------
-The campaign has two normal win paths. Whichever resolves first wins:
+지령 경로
+---------
+지령은 플레이 방향을 제시하는 장기 목표입니다. 각 경로는 독립적으로 진행되며, 한 경로를 진행한다고 다른 경로가 막히지 않습니다.
 
-1. Control `(0,0)` and raise the culture-specific Wormhole to level `100`.
-2. Control `5` Keystone colonies in the same faction, each with at least
-   `1,000` Visions.
+주요 경로:
+- 첩보 경로: 정보, 정찰, 고가치 목표 파악
+- 습격자 경로: 약탈, 압박, 자원 탈취
+- 전투 경로: 직접 전투 승리와 군사 점수
+- 경제 경로: 생산량, 저장, 장기 성장
+- 무역 경로: 시장 거래와 유동성
+- 기업 경로: 조직, 계약, 지분
+- 확장 경로: 전초기지, 식민지, 중앙 장악
+- 산업 경로: 건물 깊이와 거대구조
+- 방어 경로: 방어막, 주둔, 지원
+- 군수 경로: 무역로, 수송, 지원망
+- 증강 경로: 채굴 전초기지, 녹트마크, SPU
 
-Surrender can still end a multiplayer campaign early. If every other campaign
-faction surrenders, the last unsurrendered faction wins immediately.
+승리 축
+-------
+승리는 단순 전투 점수만으로 오지 않습니다. 중앙 목표, 세력 비전, 장기 경제, 웜홀 압박이 함께 작동합니다.
 
-THE ORIGIN WORMHOLE
--------------------
-The `(0,0)` tile is the Origin Wormhole site. It begins under a static KRAKEN
-Void garrison. Clear the garrison before colonising it.
+기원 웜홀
+---------
+웜홀은 설정 장식이 아니라 승리 조건의 지렛대입니다. 중앙 장악, 이동 거리, 경제 회복력이 모두 필요합니다.
 
-Once colonised, the site can build only:
-- the Wormhole structure
-- Silo
-- Solar Cell
-- Ion Shield up to level `20`
+키스톤 비전
+-----------
+키스톤 비전은 세력 전체의 방향을 보여주는 느린 점수판입니다. 당장 전투가 없어도 꾸준히 확인해야 합니다.
 
-The Wormhole is culture-specific:
-- Veil: `Sanctum of Vael`
-- Astraean: `Lens of Aster`
-- Varkon: `Furnace of Vorrak`
-
-The Wormhole cannot exceed the lower of Silo and Solar Cell. To build
-Wormhole `30`, both storage structures must be at least `30`.
-
-KEYSTONE VISION VICTORY
------------------------
-Each quadrant contains an Inner Keystone and an Outer Keystone. These sites
-also begin under static KRAKEN garrisons.
-
-Once colonised, a Keystone can build only:
-- Keystone Vision
-- Silo
-- Solar Cell
-- Ion Shield up to level `20`
-
-Keystone Vision cannot exceed the lower of Silo and Solar Cell. The structure
-converts donated Noctmarks into Keystone Visions over time.
-
-Keystone structure names depend on culture and tier:
-- Veil Inner: `Reliquary of Vael`
-- Veil Outer: `Obelisk of Vael`
-- Astraean Inner: `Prism of Aster`
-- Astraean Outer: `Orrery of Aster`
-- Varkon Inner: `Anvil of Vorrak`
-- Varkon Outer: `Crucible of Vorrak`
-
-NOCTMARK DONATION AND CONVERSION
---------------------------------
-Faction members can donate Noctmarks to Keystone colonies controlled by their
-faction. Donations can come from personal funds or from organizations the
-player controls.
-
-The conversion rate improves with Keystone Vision level:
-
-`NoctmarksPerVision = 100 / 100 ^ ((level - 1) / 99)`
-
-That means:
-- level `1`: `100` Noctmarks per Vision
-- level `100`: `1` Noctmark per Vision
-
-Conversion is passive and capped per hour by Keystone Vision level. Higher
-levels convert faster and waste fewer Noctmarks.
-
-OBJECTIVE INTEL
----------------
-Objective sites can be attacked and spied on, but they cannot be raided.
-
-Enemy Wormhole and Keystone progress is not live public information. Victory
-and faction objective screens show enemy objective values only from the last
-successful spy snapshot. Faction-owned objective colonies show live values to
-their faction.
-
-DIRECTIVES: HOW THE SYSTEM REALLY WORKS
----------------------------------------
-Directives are long-form progression paths.
-
-Core rules:
-- `12` paths
-- `10` stages each
-- all paths run in parallel
-- stages auto-complete when their conditions are met
-- there is no claim button
-- finishing a full path unlocks a permanent buff
-
-DIRECTIVE PATHS AND PERMANENT BUFFS
------------------------------------
-- `INTEL / Signal Cartographer`: `+12%` spy survival
-- `RAIDER / Void Reaver`: `+10%` raid loot
-- `FIGHTER / Aegis Vanguard`: `+8%` fleet attack
-- `ECON / Solar Ledger`: `+6%` base production
-- `DIPLO / Concord Envoy`: `+20%` diplomacy penalty resistance
-- `TRADER / Starlane Broker`: `+8%` fleet cargo
-- `BIZ / Consortium Founder`: `+8%` base storage
-- `EXPAND / Frontier Ascendant`: `+8%` travel speed
-- `INDUSTRY / Forge Architect`: `+8%` build speed and `+8%` ship-build speed
-- `DEFENSE / Bastion Warden`: `+10%` base defense and `+6%` fleet defense
-- `LOGI / Flux Quartermaster`: `+10%` travel speed and `+6%` fleet cargo
-- `AUGMENT / Noctium Artificer`: `+8%` research speed and `+10%`
-  transmute speed
-
-HOW TO THINK ABOUT DIRECTIVES
------------------------------
-Directives are not side quests. They are a second layer of empire shape.
-
-Examples:
-- a raider empire that finishes `RAIDER` and `LOGI` becomes much better at
-  repeated economic pressure
-- a Keystone faction that finishes `ECON`, `INDUSTRY`, and `AUGMENT` scales
-  production, construction, and conversion support all at once
-- a defensive Origin holder loves `DEFENSE`, `INDUSTRY`, and `EXPAND`
-
-PRACTICAL DIRECTIVE ADVICE
---------------------------
-1. Because all paths run in parallel, broad play naturally progresses more
-   directives than narrow tunnel-vision play.
-
-2. Spy, trade, raid, expansion, and production all have long-term value even if
-   they are not your main win condition.
-
-3. If you ignore a whole layer of the game, you also ignore the directive buff
-   attached to it.
-
-THE WINNING MINDSET
--------------------
-Late-game planning should stay centered on this question:
-"Can my faction keep one objective path moving while protecting it from spies,
-siege, and coordinated counterattacks?"
+승리 준비
+---------
+- 중앙으로 닿을 발진 거리를 확보합니다.
+- 보복을 버틸 경제를 만듭니다.
+- 지원군과 귀환 항로를 준비합니다.
+- 세력 목표에 맞춰 자원을 모읍니다.
+- 경쟁자가 어느 승리 축에 가까운지 감시합니다.

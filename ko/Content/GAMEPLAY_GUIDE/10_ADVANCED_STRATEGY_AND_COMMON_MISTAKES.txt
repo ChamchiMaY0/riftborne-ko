@@ -1,133 +1,43 @@
-10) ADVANCED STRATEGY AND COMMON MISTAKES
------------------------------------------
+10) 고급 전략과 흔한 실수
+------------------------
 
-THE BEST OPENINGS ARE DELIBERATE
---------------------------------
-A useful opening question is:
-"What role is this base becoming, and what timing am I trying to hit?"
+템포를 보라
+-----------
+수입, 저장, 대기열, 이동 시간, 정찰 주기를 하나의 템포로 보세요. 한 부분이 느리면 전체 계획이 느려집니다.
 
-That keeps early upgrades tied to expansion, raids, defense, or objective tempo
-instead of short-term affordability alone.
+고급 원칙
+---------
+- 적의 함대가 아니라 시간표를 공격하세요.
+- 정면 승리가 비싸면 항로, 저장고, 조선소를 노리세요.
+- 같은 패턴을 반복하지 마세요.
+- 예비 함대와 예비 저장고를 남기세요.
+- 중앙을 노릴 때는 보복 비용까지 계산하세요.
 
-THREE STRONG EARLY IDENTITIES
------------------------------
+흔한 실수
+---------
+1. 상한 방치
+자원이 가득 차면 생산이 사라집니다. 저장고 업그레이드는 지루하지만 강합니다.
 
-1. OUTPOST MACRO OPEN
-- early `Central Spire 5`
-- first mining outpost online quickly
-- storage and resource buildings that turn the outpost into lasting throughput
-- stable Astra while ship queues start
-- first expansion only when the lane is defendable
+2. 과확장
+새 기지가 미래 함대인 것은 맞지만, 지킬 수 없는 새 기지는 현재의 약점입니다.
 
-Best when:
-- neighbors are far
-- your opening tile quality is strong
-- you want reliable Keystone or center access later
+3. 늦은 정찰
+공격 직전의 정보가 오래됐다면 그것은 정보가 아니라 추억입니다.
 
-2. RAID TEMPO OPEN
-- shipyards sooner
-- fast, cargo-capable pressure fleets
-- scouting before commitment
-- economy built around replacing raid losses fast
+4. 조선소 휴식
+쉬는 조선소는 상대에게 시간을 줍니다.
 
-Best when:
-- nearby rivals are exposed
-- you can reach them quickly
-- you understand cargo math well enough to make raids pay
+5. 모든 것을 업그레이드
+계획이 쓰지 않는 업그레이드는 멋진 낭비입니다.
 
-3. FORTRESS INTO CORE OPEN
-- Ion Shield and Astra safety
-- controlled expansion
-- base specialization
-- late but powerful objective and center timing
+6. 승리 조건 무시
+전투에서 이기고도 웜홀, 키스톤, 중앙 목표를 놓치면 게임을 잃을 수 있습니다.
 
-Best when:
-- neighbors are aggressive
-- your local space is worth holding
-- you expect a long match
-
-WHEN TO RAID AND WHEN TO ATTACK
--------------------------------
-Raid when:
-- the target is economically rich
-- hidden stock is low enough that visible loot still matters
-- you can carry home enough value
-- the defender is strong enough that a full attack would be wasteful
-
-Attack when:
-- you can actually win the field battle
-- siege can convert the win into structural damage
-- removing the base matters more than stealing a shipment
-
-Reversing those decisions usually wastes fleets and tempo.
-
-HOW TO READ A TARGET
---------------------
-Ask these questions before launch:
-- What is the defender's light-heavy mix?
-- Is there an Ion Shield?
-- How much hidden stock is likely on the base?
-- Can the defender reinforce before I arrive?
-- If I win, do I have enough siege and survival left to matter?
-
-If you do not know those answers, spy first.
-
-WHY MANY "WON" EMPIRES STILL LOSE
----------------------------------
-1. They expand to the cap before they can defend the cap.
-
-2. They fund objective structures without the storage, income, or defense to
-   feed them safely.
-
-3. They launch attacks from slow bases and arrive too late.
-
-4. They treat central control as a final step instead of a long setup.
-
-5. They win ships but lose Astra.
-
-CULTURE-SPECIFIC STRATEGY
--------------------------
-
-ASTRAEAN
-- play for efficiency, mixed fleets, and clean logistics
-- respect the slower build pace
-- great for flexible midgame transitions and long stable economies
-
-VARKON
-- your biggest advantage is decisive committed violence
-- use `Conscription Service` for real wars, not random skirmishes; its
-  activation window is short and its post-window cooldown is long
-- build the economy that lets you pick the timing, then hit hard
-
-VEIL
-- think in launch bases, shard timing, and asymmetry
-- your best turns often come from mobility, special upgrades, and tempo spikes
-- do not waste the culture by playing like a fair, static line faction
-
-COMMON MISTAKES
----------------
-1. Starving Astra to build one more nice structure.
-
-2. Sending siege ships on raids that only wanted cargo.
-
-3. Ignoring shipyard travel speed and then wondering why every response is late.
-
-4. Assuming one good raid empties a rich target through `Nano Storage`.
-
-5. Building every structure on every colony.
-
-6. Hitting `(0,0)` too early and waking endgame pressure without the economy to
-   survive it.
-
-7. Treating Noctmarks, SPUs, and directives as side systems.
-   In long matches they become empire-shaping advantages.
-
-THE SIMPLE WINNING CHECKLIST
-----------------------------
-You are usually in good shape when most of these are true:
-- I can afford my current ship upkeep comfortably.
-- At least one base trains ships quickly.
-- At least one base is built to hold pressure.
-- My next expansion has a reason, not just a free slot.
-- I know whether I am pursuing Wormhole or Keystone victory.
-- I know which rival I must slow before the core war.
+회복법
+------
+막혔다면 순서대로 보세요.
+1. 수입을 올립니다.
+2. 저장 상한을 올립니다.
+3. 대기열을 채웁니다.
+4. 정찰을 새로 합니다.
+5. 가장 가까운 목표 하나를 고릅니다.

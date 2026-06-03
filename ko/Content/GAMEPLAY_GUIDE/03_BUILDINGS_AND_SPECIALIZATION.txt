@@ -1,272 +1,57 @@
-03) BUILDINGS AND SPECIALIZATION
---------------------------------
+03) 건물과 전문화
+-----------------
 
-GENERAL BUILDING RULES
-----------------------
-Most buildings scale to level 20.
+건물은 템포다
+-------------
+건물 레벨은 단순한 숫자가 아니라 시간표입니다. 어떤 건물을 먼저 올렸는지가 한 시간 뒤 가능한 선택지를 결정합니다.
 
-Important exceptions:
-- Dyson Sphere: max level 200
-- Flagship Research: max level 5
-- Drill and Refiner: mining-outpost structures, not normal colony builds
+핵심 건물
+---------
+- 중앙 첨탑: 확장, 전초기지, 전체 진행의 관문입니다.
+- 사일로: 자원 저장 상한을 올립니다.
+- 태양 전지: 저장과 경제 안정성의 조용한 축입니다.
+- 생산 건물: 자원을 시간당 수입으로 바꿉니다.
+- 조선소: 자원을 위협으로 바꿉니다.
+- 이온 방어막: 공격을 시간으로 바꿉니다.
 
-GENERAL BUILD-TIME RULE
------------------------
-Building costs scale by structure type and level, but the timing rule is simple:
+경제 건물
+---------
+생산 건물은 혼자 강하지 않습니다. 저장고, 조합기, 변환 도구, 시장 접근이 함께 있어야 낭비가 줄어듭니다.
 
-`actualBuildTime = listedBuildTime / BuildSpeedMultiplier`
+조합기와 합성 계열은 입력 균형이 중요합니다. 가장 약한 입력이 전체 출력을 제한합니다.
 
-Your base's `BuildSpeedMultiplier` starts at `1.0` and then grows from:
-- Central Spire
-- Flagship Research
-- some Eldritch upgrades
-- some SPU bonuses
+군사 건물
+---------
+조선소는 선택지를 늘립니다. 경량 함선은 빠른 대응과 정찰에 좋고, 중량 함선은 결정적 압박에 좋습니다.
 
-Important culture rule:
-- Astraean empires apply a 0.60x multiplier to normal building speed
-- that means Astraean colonies build structures more slowly unless other bonuses
-  make up for it
+방어 건물은 전투에서 바로 보이지 않아도 시간을 삽니다. 시간은 지원군, 귀환, 재건, 외교를 가능하게 합니다.
 
-WORKED EXAMPLE: BUILD SPEED
----------------------------
-Suppose a base has:
-- Central Spire 8
-- no other build-speed effects
+문화별 특수 건물
+----------------
+문화 도구는 같은 목적을 다른 방식으로 해결합니다.
 
-Then:
+- 아스트라 계열: 깔끔한 격자와 효율
+- 바르콘 계열: 높은 처리량과 지속 생산
+- 장막 계열: 타이밍, 변환, 기회주의
 
-`BuildSpeedMultiplier = 1.0 + (0.10 * 8) = 1.8`
+전문화 예시
+-----------
+경제 수도:
+- 저장고와 생산 건물을 우선합니다.
+- 시장과 무역로로 잉여를 흘려보냅니다.
 
-If a structure has a listed build time of `110` seconds:
+전쟁 항구:
+- 조선소, 방어막, 함대 주둔을 우선합니다.
+- 가까운 목표를 압박하고 지원군을 빨리 보냅니다.
 
-`actual time = 110 / 1.8 = 61.1 seconds`
+군수 허브:
+- 항로와 귀환 임무를 안정화합니다.
+- 여러 기지의 자원 흐름을 조정합니다.
 
-If the same base also has Flagship Research 5, add another:
-
-`0.03 * 5 = 0.15`
-
-Now:
-
-`BuildSpeedMultiplier = 1.95`
-
-And:
-
-`110 / 1.95 = 56.4 seconds`
-
-THE MOST IMPORTANT BUILDINGS
-----------------------------
-
-1. CENTRAL SPIRE
-- Exact effect: +10% building speed per level
-- Strategic use: the backbone of expansion and late-game victory
-- Critical milestones:
-  - L5/L10/L15: each level unlocks one generic outpost slot from that base
-  - L20: colony founding unlocks from that base
-  - L21-L25: each level adds another generic outpost slot
-  - each outpost slot can be spent on a strategic outpost, asteroid mining
-    outpost, or rare-metal mining outpost if the target tile is valid
-  - normal Central Spires no longer directly satisfy victory; `(0,0)` uses a
-    culture-specific Wormhole instead
-
-2. SHIPYARD FAMILIES
-- The legacy `Dockyards` building is retired. Live production uses three
-  separate shipyard families.
-- `Light Shipyard`: +10% light/intelligence build and travel speed per level,
-  plus +2% light-hull stats per level
-- `Heavy Shipyard`: +10% heavy/cargo/colonization build and travel speed per
-  level, plus +2% heavy-hull stats per level
-- `Siege Foundry`: +10% bomber/siege build and travel speed per level, plus
-  +2% siege-hull stats per level
-- Unlock thresholds: bombers require `Siege Foundry 5`; siege hulls require
-  `Siege Foundry 15`
-- Strategic use: specialize launch bases around the hull families they actually
-  produce and send
-
-3. ION SHIELD
-- Exact effect depends on the owner's culture:
-  - Astraean: +7.5% defense multiplier and +75 flat base defense per level
-    (2.5x shield strength and +1,500 flat defense at L20)
-  - Varkon: +1% defense multiplier and +10 flat base defense per level
-    (1.2x shield strength and +200 flat defense at L20)
-  - Veil: +5% defense multiplier and +50 flat base defense per level
-    (2.0x shield strength and +1,000 flat defense at L20)
-- Strategic use: turns a colony from "raided if seen" into a position that
-  demands real commitment to break
-- Hidden catch: shield integrity matters; a damaged shield is much weaker
-
-4. OBJECTIVE STRUCTURES
-- Normal colonies no longer build vision infrastructure.
-- `(0,0)` can build only its culture-specific Wormhole, Silo, Solar Cell, and
-  Ion Shield.
-- Keystone colonies can build only Keystone Vision, Silo, Solar Cell, and Ion
-  Shield.
-- Wormhole and Keystone Vision levels are gated by the lower of Silo and Solar
-  Cell on the same special colony.
-- Strategic use: turns defended objective control into victory progress
-- Common mistake: funding the structure before the site can be held
-
-5. SILO AND SOLAR CELL
-- Strategic use: they are tempo buildings, not dead weight
-- Without them you hard-cap income and waste production
-- Silo: Vulkron, Aurelite, Deuterium
-- Solar Cell: Astra
-
-6. ORBITAL EXCHANGE
-- Exact effect: `+1%` cargo capacity per level for launched fleets
-- Exact effect: `+1%` shipment speed per level for trade routes, manual
-  transfers, and marketplace fulfillment
-- Strategic use: stronger raids, stronger logistics, stronger market shipping
-- Best on bases that launch traders, raiders, or long-haul support fleets
-
-RESOURCE BUILDINGS
-------------------
-Matching resource buildings add directly to the corresponding multiplier:
-- Extractor -> Vulkron
-- Synthesiser -> Aurelite
-- Combinator -> Deuterium
-- Solar Array -> Astra
-- Dyson Sphere -> Astra, but as a late-game sink with a far higher cap
-
-In the standard campaign, each normal resource-building level adds +10% to the
-matching resource output. Custom presets can change that bonus, but the
-building rule is always "campaign normal bonus per level."
-
-Dyson Sphere note:
-- it follows the same Astra multiplier idea
-- it exists to keep late-game Astra scaling relevant
-- after level 20 its cost keeps climbing aggressively
-
-DEFENSIVE AND ECONOMIC UTILITY BUILDINGS
-----------------------------------------
-
-NANO STORAGE
-- Exact effect:
-
-  `hiddenFraction = min(0.80, 0.04 * level)`
-
-- Best use: backline stockpiles, raid-prone frontiers, and objective support
-  economies
-
-DRONE FACILITY
-- Exact effect:
-
-  `upkeepReduction = min(0.80, 0.04 * level)`
-
-- Best use: big garrisons, training hubs, and Astra-starved war economies
-
-FLAGSHIP RESEARCH
-- Max level 5
-- Exact effect: +15% research speed per level
-- Exact effect: +3% build speed per level
-- Best use: a safe infrastructure base that will stay alive long enough to
-  complete a flagship program
-
-Flagship research point sources:
-- Light Attack: `0.1` per light hull destroyed while attacking
-- Heavy Attack: `0.1` per heavy hull destroyed while attacking
-- Light Defense: `0.1` per light hull destroyed while defending
-- Heavy Defense: `0.1` per heavy hull destroyed while defending
-- Speed: `0.0001` per resource raided
-- Cargo: `0.01` per resource moved in accepted exchange offers
-- Crit: `0.1` per completed contract
-- Evasion: `0.1` per defended incoming spy mission
-- Tracking: `0.1` per successful outgoing spy mission
-- Siege: `1.0` per building level destroyed
-
-CULTURE-SPECIFIC INFRASTRUCTURE
--------------------------------
-
-ASTRAEAN: OVERCLOCKER
-- In the standard campaign, each level adds +5% to all four resource outputs
-- In custom campaigns, it always uses half of that save's normal
-  resource-building bonus
-- Best use: balanced economy bases and long-ramp macro builds
-
-VARKON: CONSCRIPTION SERVICE
-- Active ability, not a passive economy building
-- Activation cost:
-
-  `200 * buildingLevel` of each core resource
-
-- Active window:
-
-  scales linearly from `15m` at L1 to `4h` at L20
-
-- Cooldown:
-
-  after the active window ends, scales linearly from `24h` at L1 to `16h` at L20
-
-- Effect:
-
-  `+10% * buildingLevel` attack power to the owner while active
-
-Worked example:
-- `Conscription Service 7`
-- activation cost = `1,400` Vulkron + `1,400` Aurelite + `1,400` Deuterium +
-  `1,400` Astra
-- active window = about `1h 26m`
-- cooldown after the window = about `21h 28m`
-- effect = `+70%` attack power during that window
-
-VEIL: ELDRITCH CONDUIT
-- unlocks a deep shard-powered upgrade tree
-- exact upgrade list appears later in `Veil, Mining Outposts, and SPUs`
-- best use: a carefully chosen launch base, fortress base, or raid hub
-
-VEIL: TRANSMUTING VOID
-- converts any mix of input resources into one chosen output resource at `1:1`
-  total volume
-- duration starts at 6h at level 1 and falls to 15m at level 20
-- best use: fixing short-term bottlenecks, not replacing real production
-
-HOW TO SPECIALIZE BASES
------------------------
-Trying to do everything everywhere usually creates slow, fragile empires.
-
-Strong specializations:
-
-1. Economic engine
-- matching resource building
-- storage
-- Overclocker or economy SPUs if available
-- usually lower garrison unless exposed
-
-2. Military forge
-- shipyards
-- Astra support
-- Drone Facility if garrison is large
-- enough storage to keep training uninterrupted
-
-3. Objective node
-- Wormhole or Keystone Vision
-- gated storage
-- strong Astra economy
-- real defense, because a lost objective contributes nothing
-
-4. Fortress
-- Ion Shield
-- Nano Storage
-- enough shipyard tempo or nearby support that reinforcements arrive in time
-- use on choke points, core sites, or high-value production worlds
-
-5. Launch hub
-- shipyards
-- Orbital Exchange
-- culture-specific launch bonuses
-- best place for raids, market shipments, and deep-strike fleets
-
-COMMON BUILDING MISTAKES
-------------------------
-1. Objective funding before economy.
-   If Wormhole or Keystone upgrades starve the rest of your empire, you slowed
-   yourself down.
-
-2. No storage on a rich tile.
-   A capped base is wasting output.
-
-3. Frontline colony without shipyard support.
-   If help cannot arrive quickly, the defense is weaker than it looks.
-
-4. Too many half-built roles.
-   One real military base and one real economy base are usually better than
-   four unfinished hybrids.
+위험 신호
+---------
+- 모든 기지가 비슷한 레벨입니다.
+- 건설 대기열이 자주 비어 있습니다.
+- 상한에 닿은 자원이 반복됩니다.
+- 조선소가 쉬고 있습니다.
+- 방어막이 없는 전진 기지가 많습니다.

@@ -20,13 +20,12 @@ if (-not $NoBackup) {
     $timestamp = Get-Date -Format "yyyyMMdd-HHmmss"
     $backupRoot = Join-Path $RepoRoot "backup\$timestamp\Content"
     New-Item -ItemType Directory -Force (Join-Path $backupRoot "Data"), (Join-Path $backupRoot "GAMEPLAY_GUIDE") | Out-Null
-    Copy-Item -LiteralPath (Join-Path $GameContent "Data\*.csv") -Destination (Join-Path $backupRoot "Data")
-    Copy-Item -LiteralPath (Join-Path $GameContent "GAMEPLAY_GUIDE\*.txt") -Destination (Join-Path $backupRoot "GAMEPLAY_GUIDE")
+    Copy-Item -Path (Join-Path $GameContent "Data\*.csv") -Destination (Join-Path $backupRoot "Data")
+    Copy-Item -Path (Join-Path $GameContent "GAMEPLAY_GUIDE\*.txt") -Destination (Join-Path $backupRoot "GAMEPLAY_GUIDE")
     Write-Host "Backup created: $backupRoot"
 }
 
-Copy-Item -LiteralPath (Join-Path $KoContent "Data\*.csv") -Destination (Join-Path $GameContent "Data") -Force
-Copy-Item -LiteralPath (Join-Path $KoContent "GAMEPLAY_GUIDE\*.txt") -Destination (Join-Path $GameContent "GAMEPLAY_GUIDE") -Force
+Copy-Item -Path (Join-Path $KoContent "Data\*.csv") -Destination (Join-Path $GameContent "Data") -Force
+Copy-Item -Path (Join-Path $KoContent "GAMEPLAY_GUIDE\*.txt") -Destination (Join-Path $GameContent "GAMEPLAY_GUIDE") -Force
 
 Write-Host "Korean translation applied to: $GameContent"
-

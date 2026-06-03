@@ -13,8 +13,7 @@ if (-not (Test-Path -LiteralPath $GameContent)) {
     throw "Game Content directory not found: $GameContent"
 }
 
-Copy-Item -LiteralPath (Join-Path $SourceContent "Data\*.csv") -Destination (Join-Path $GameContent "Data") -Force
-Copy-Item -LiteralPath (Join-Path $SourceContent "GAMEPLAY_GUIDE\*.txt") -Destination (Join-Path $GameContent "GAMEPLAY_GUIDE") -Force
+Copy-Item -Path (Join-Path $SourceContent "Data\*.csv") -Destination (Join-Path $GameContent "Data") -Force
+Copy-Item -Path (Join-Path $SourceContent "GAMEPLAY_GUIDE\*.txt") -Destination (Join-Path $GameContent "GAMEPLAY_GUIDE") -Force
 
 Write-Host "Original 10.77 content restored to: $GameContent"
-
