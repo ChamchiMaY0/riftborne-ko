@@ -1,0 +1,265 @@
+08) VEIL, MINING OUTPOSTS, AND SPUS
+-----------------------------------
+
+VEIL SOUL SHARDS
+----------------
+Soul shards are a shared player-wide currency for Veil commanders.
+
+Exact combat rule:
+- each unit kill grants `1` soul shard
+- a Veil attacker gets shards for the kills it causes
+- a Veil defender gets shards for the kills it causes
+
+Those shards go into one shared vault across the whole empire.
+
+TITHE OF THE FALLEN
+-------------------
+`Tithe of the Fallen` no longer converts shards into faction visions. Normal
+colony vision infrastructure has been retired; Keystone Visions now come from
+Noctmark donations to controlled Keystone colonies.
+
+ELDRITCH CONDUIT UPGRADE SHOP
+-----------------------------
+Each upgrade is bought for soul shards and applies only to that base unless the
+description says otherwise.
+
+UPGRADE LIST
+------------
+- `Shadow Hoard` (`4,600`): hide `+20%` resources from raids, still capped at
+  `95%`
+- `Veil Siphon` (`6,000`): raids from this base steal `+20%` more resources
+- `Whisper Relay` (`4,800`): spy fleets from this base travel `+20%` faster
+- `Nullwake Drives` (`5,500`): all fleets from this base travel `+20%` faster
+- `Phase Foundry` (`5,000`): ship training speed at this base `+20%`
+- `Gloom Ward` (`5,200`): base defense multiplier `+20%`
+- `Spectral Targeting` (`4,400`): launched fleets gain `+5` tracking
+- `Shiver Screens` (`4,400`): launched fleets gain `+5` evasion
+- `Crit-Chain Doctrine` (`5,800`): launched fleets gain `+10` crit
+- `Void Siege Rites` (`6,000`): launched fleets gain `+50%` siege
+- `Umbral Stockpiles` (`5,400`): base storage `+25%`
+- `Astra Suture Seal` (`5,600`): stationed ship upkeep at this base `-20%`
+  after other reductions
+- `Obsidian Overclock` (`5,000`): building construction speed at this base
+  `+20%`
+- `Rift Cargo Manifolds` (`5,200`): launched fleets gain `+20%` cargo capacity
+- `Stolen Breath` (`5,700`): successful raids siphon extra loot after the main
+  steal
+- `Phantom Treaty` (`4,200`): attacks and raids from this base cause `80%` less
+  diplomatic penalty
+- `Stasis Bastion` (`4,800`): incoming siege budget against this base `-25%`
+- `Tithe of the Fallen` (`5,900`): retired shard-to-vision action; retained as
+  legacy upgrade data
+- `Riftwalk Logistics` (`6,000`): this base trains in `2` parallel lanes
+- `Eclipse Ascension` (`10,000`): choose one capstone path
+
+ECLIPSE ASCENSION PATHS
+-----------------------
+- `War`: launched fleets gain `+25%` attack and `+25%` defense
+- `Economy`: this base gains `+50%` to all four production multipliers
+- `Espionage`: spy fleets from this base travel in `1 second`
+
+TRANSMUTING VOID: THE EXACT RULE
+--------------------------------
+You feed any mixture of core resources into the Transmuting Void and choose one
+output resource.
+
+Output rule:
+
+`outputAmount = totalInputAcrossAllFourResources`
+
+So if you feed:
+- `400 Vulkron`
+- `250 Aurelite`
+- `100 Deuterium`
+- `50 Astra`
+
+Then:
+
+`output = 400 + 250 + 100 + 50 = 800`
+
+You receive `800` of the chosen output resource when the process completes.
+
+TRANSMUTE DURATION CURVE
+------------------------
+The building's duration falls from `6h` at level 1 to `15m` at level 20.
+
+Examples:
+- `L1 = 360 minutes`
+- `L5 = 287.37 minutes`
+- `L10 = 196.58 minutes`
+- `L15 = 105.79 minutes`
+- `L20 = 15 minutes`
+
+WORKED EXAMPLE: TRANSMUTATION
+-----------------------------
+At `Transmuting Void 10`, duration is about `196.58` minutes.
+
+If you feed:
+- `600 Vulkron`
+- `300 Aurelite`
+- `100 Astra`
+
+Then:
+
+`totalInput = 600 + 300 + 100 = 1000`
+
+If you choose `Deuterium`, the result is:
+
+`1000 Deuterium` after about `196.58 minutes`
+
+When to use it:
+- to fix a bottleneck before a war timing
+- to finish a critical building or ship batch
+- to stabilize expensive objective or fleet timings
+
+When not to use it:
+- as a permanent replacement for real production specialization
+
+MINING OUTPOSTS
+---------------
+Mining outposts are special bases founded on seeded mining-site tiles.
+
+Requirements:
+- origin base needs `Central Spire 5`
+- target tile must be a mining-outpost site
+- each origin base can support one next outpost
+
+Mining outposts do not use the normal colony economy.
+Their value comes from rare metals, Noctmarks, and SPUs.
+
+DRILL: THE EXACT MINING RULE
+----------------------------
+Mining resolves in whole minutes.
+
+Each minute, the outpost rolls:
+
+`drillChance = 0.05 + ((drillLevel - 1) / 19.0) * 0.95`
+
+Examples:
+- `L1 = 5%` chance per minute
+- `L10 = 50%` chance per minute
+- `L20 = 100%` chance per minute
+
+WORKED EXAMPLE: DRILL 10
+------------------------
+`(10 - 1) / 19 = 9 / 19 = 0.473684`
+
+`0.473684 * 0.95 = 0.450000`
+
+`0.05 + 0.45 = 0.50`
+
+So `Drill 10` mines on exactly `50%` of minute ticks on average.
+
+DRILL UNLOCK PROGRESSION
+------------------------
+The drill auto-upgrades from lifetime metals mined:
+- below `100` total mined -> `L1`
+- `10,000` or more total mined -> `L20`
+- values in between interpolate through the middle levels
+
+REFINER AND NOCTMARK MINTING
+----------------------------
+The refiner does two separate jobs:
+
+1. SPU crafting
+- one craft attempt per hour
+
+2. Noctmark minting
+- every `1` hour
+- exact rule:
+
+  `10 Noctium -> 10 Noctmarks`
+
+Noctmarks are personal currency, not colony stock.
+
+RARE-METAL TABLES
+-----------------
+Each outpost site belongs to one weighted table:
+- `Echo Vein`
+- `Prismatic Lode`
+- `Xeno Shardfield`
+- `Vant Flux Rift`
+- `Radian Crucible`
+- `Noct Cache`
+
+Each table biases one or two metals.
+Example:
+- `Noct Cache` is the best raw Noctium table
+- `Echo Vein` leans Echorite
+- `Radian Crucible` leans Radianite
+
+SPU CRAFTING
+------------
+Every hour the refiner:
+1. deterministically shuffles the five craftable metals
+2. tries to include metals based on current holdings share
+3. spends one unit of each included metal
+4. creates one SPU stack
+
+If no metal is included, the SPU is errored.
+
+SPU deliveries begin every `24` hours after the first SPU is produced.
+
+SPU BONUS MAGNITUDE
+-------------------
+SPUs grant passive bonuses while owned.
+
+Exact magnitude rule per stack:
+
+`bonusPerUnit = average(DrillLevel, RefinerLevel) * 0.1%`
+
+Then:
+
+`totalBonus = bonusPerUnit * stackCount`
+
+WORKED EXAMPLE: SPU MAGNITUDE
+-----------------------------
+Suppose a stack was crafted at:
+- `Drill 12`
+- `Refiner 8`
+
+Average level:
+
+`(12 + 8) / 2 = 10`
+
+Per-unit bonus:
+
+`10 * 0.1% = 1.0%`
+
+If you own `7` copies of that exact SPU:
+
+`1.0% * 7 = 7.0%`
+
+That stack contributes a `7%` bonus to its target stat.
+
+SPU BONUS TARGETS
+-----------------
+SPUs can target:
+- specific ship-class attack, defense, speed, training speed, or upkeep
+- base production
+- base storage
+- build speed
+- ship-build speed
+- travel speed
+- base defense
+- research speed
+- transmute speed
+- fleet attack, defense, siege, raid loot, or cargo
+- fleet crit, evasion, or tracking
+- spy survival
+- diplomacy penalty reduction
+
+HOW TO USE OUTPOSTS WELL
+------------------------
+1. Think of outposts as an economy layer above normal colonies, not as tiny
+   frontline planets.
+
+2. Protect the origin colony that feeds the outpost.
+   If the origin collapses, the outpost becomes awkward to support.
+
+3. Chase tables that match your current plan:
+- Noctium if you want Noctmarks
+- specific craft metals if you want strong SPU stacking
+
+4. Do not ignore daily delivery timing.
+   SPU power arrives in waves, so time purchases and launches around that.

@@ -1,0 +1,202 @@
+09) MARKETS, ORGANIZATIONS, AND DIPLOMACY
+-----------------------------------------
+
+ORBITAL EXCHANGE AND THE RESOURCE MARKET
+----------------------------------------
+Marketplace offers are strict `1-for-1` listings:
+- exactly one offered resource type
+- exactly one wanted resource type
+
+Posting an offer requires:
+- enough stock to cover the offered goods
+- enough cargo ships to cover that shipment
+
+Those cargo ships are reserved while the offer is live.
+
+Accepting an offer requires:
+- enough stock to pay the wanted amount
+- enough cargo capacity to haul the payment
+
+MARKET SHIPMENTS
+----------------
+Accepted trades create two travel legs:
+- seller goods travel to buyer
+- buyer goods travel to seller
+
+Travel uses the logistics rule from section `04`.
+
+Practical market lesson:
+- Orbital Exchange on a launch base is a real trade advantage
+- high travel speed shortens capital lock-up
+- weak cargo means attractive offers may still be impossible to execute
+
+ORGANIZATIONS: WHAT THEY ARE
+----------------------------
+Organizations are player-facing financial institutions that can act as:
+- contract boards
+- lenders
+- holding vehicles
+
+A single organization can lean toward one role or become a hybrid.
+
+FOUNDING RULES
+--------------
+- ticker must be exactly `3` letters
+- minimum seed is `1 Noctmark`
+- starting capital structure:
+  - authorized shares = `100`
+  - founder-issued shares = `100`
+  - public float = `0`
+- initial share price:
+
+  `max(1, round(seedNoctmarks / 100))`
+
+So a `500` Noctmark seed implies a starting share price near `5`.
+
+CONTRACTS
+---------
+Contracts pay in `Noctmarks`.
+
+Current contract types:
+- destroy a base
+- destroy building levels
+- destroy ship Astra value
+- raid resources total
+- raid one resource type
+- destroy a mining outpost
+- break Ion Shield integrity
+- raid Astra total
+
+How to use them:
+- take contracts that match what your fleet already wants to do
+- post contracts that make rivals bleed in ways your own empire benefits from
+
+The organization UI already exposes:
+- recommended payout
+- recent sold average
+- offer quality
+- risk band
+- summary text
+
+That is the best player-facing way to judge whether a contract is cheap,
+credible, or bait.
+
+SHARES AND THE EQUITY MARKET
+----------------------------
+Organizations support:
+- sell orders
+- bid orders
+- completed trades
+- price history
+
+Useful readings on the owner page:
+- `Last trade`
+- `Fair value`
+- `Market cap`
+- `Enterprise value`
+- float
+- ownership concentration
+- dividend policy
+
+Player lesson:
+- `Last trade` tells you what just cleared
+- `Fair value` tells you what the business looks like underneath the tape
+- the gap between them tells you whether the market is hot, weak, or starved
+
+LOANS
+-----
+Organizations can lend and borrow in `Noctmarks`.
+
+Daily interest rule:
+
+`dailyInterest = ceil(outstandingPrincipal * dailyRatePercent / 100)`
+
+WORKED EXAMPLE: LOAN INTEREST
+-----------------------------
+Suppose a board borrows `12,000 Noctmarks` at `1.8%` daily.
+
+`dailyInterest = ceil(12000 * 1.8 / 100)`
+`dailyInterest = ceil(216)`
+`dailyInterest = 216`
+
+That borrower owes `216 Noctmarks` every day until principal is repaid or the
+loan matures.
+
+DEFAULTS
+--------
+If a borrower cannot cover daily interest, the loan can default.
+When that happens:
+- the lender seizes whatever treasury it can
+- the unpaid remainder is recorded as unrecovered
+- the credit relationship worsens
+
+Loan lesson:
+- borrowed cash should fund a plan that earns before the interest clock wins
+
+TRIBUTE, TRUCES, AND DIPLOMATIC PRESSURE
+----------------------------------------
+Players can use diplomacy to send:
+- truce offers
+- Noctmark tribute
+- resource tribute
+
+Tribute matters because it can:
+- move stock to an ally at the right time
+- improve relations
+- buy short-term stability inside a faction network
+
+Important detail:
+- `Noctmarks` go to the receiving leader's personal account
+- resource tribute goes to a receiving base
+
+ATTACKS AND PENALTIES
+---------------------
+Raids and attacks create diplomatic friction.
+
+Veil `Phantom Treaty` is powerful because it cuts those attack and raid
+penalties by `80%` for fleets launched from that base.
+
+TRANSMISSIONS
+-------------
+The Transmissions beacon gives you short interactive events with real gameplay
+consequences.
+
+Exact flow:
+- start a search
+- wait `10` to `30` seconds
+- pick one of three responses
+- after choosing, the beacon cools down for `10 minutes`
+
+Transmission outcomes can change:
+- resources
+- faction relations
+- ships
+- building levels
+
+Because transmission effects hit a real target base, they are strongest when
+used on the base that can convert the outcome immediately.
+
+USEFUL ECONOMIC USES OF THESE SYSTEMS
+-------------------------------------
+1. Use the market to convert local surpluses into missing war inputs.
+
+2. Use organizations when your empire is rich enough that capital structure and
+   credit actually matter.
+
+3. Use contracts to pay for pressure you wanted on the map anyway.
+
+4. Use transmissions opportunistically, not habitually. Their value depends on
+   current context.
+
+5. Use tribute when a shared defensive line matters more than perfect selfish
+   efficiency.
+
+COMMON MISUSES
+--------------
+1. Posting contracts you cannot really fund.
+
+2. Selling shares too cheaply just because you want instant cash.
+
+3. Borrowing for vanity expansion instead of a clear timing window.
+
+4. Treating diplomacy as flavor text while your frontier burns.

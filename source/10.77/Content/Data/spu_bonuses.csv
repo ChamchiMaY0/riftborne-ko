@@ -1,0 +1,121 @@
+﻿PermutationKey,Category,TargetKind,TargetParam,Label
+EPRVX,Ships,UnitAttack,LightFighter,+LightFighter attack multiplier
+EPRXV,Ships,UnitAttack,HeavyFighter,+HeavyFighter attack multiplier
+EPVRX,Ships,UnitAttack,Bomber,+Bomber attack multiplier
+EPVXR,Ships,UnitAttack,Drone,+Drone attack multiplier
+EPXRV,Ships,UnitAttack,Frigate,+Frigate attack multiplier
+EPXVR,Ships,UnitAttack,Destroyer,+Destroyer attack multiplier
+ERPVX,Ships,UnitAttack,Colonization,+Colonization attack multiplier
+ERPXV,Ships,UnitAttack,Intelligence,+Intelligence attack multiplier
+ERVPX,Ships,UnitAttack,Siege,+Siege attack multiplier
+ERVXP,Ships,UnitAttack,Siege,+Siege attack multiplier
+ERXPV,Ships,UnitAttack,Intelligence,+Intelligence attack multiplier
+ERXVP,Ships,UnitAttack,Drone,+Drone attack multiplier
+EVPRX,Ships,UnitAttack,Corvette,+Corvette attack multiplier
+EVPXR,Ships,UnitAttack,Gunship,+Gunship attack multiplier
+EVRPX,Ships,UnitAttack,Cruiser,+Cruiser attack multiplier
+EVRXP,Ships,UnitAttack,Capital,+Capital attack multiplier
+EVXPR,Ships,UnitAttack,Carrier,+Carrier attack multiplier
+EVXRP,Ships,UnitAttack,Siege,+Siege attack multiplier
+EXPRV,Ships,UnitAttack,Colonization,+Colonization attack multiplier
+EXPVR,Ships,UnitDefense,LightFighter,+LightFighter defense multiplier
+EXRPV,Ships,UnitDefense,HeavyFighter,+HeavyFighter defense multiplier
+EXRVP,Ships,UnitDefense,Bomber,+Bomber defense multiplier
+EXVPR,Ships,UnitDefense,Drone,+Drone defense multiplier
+EXVRP,Ships,UnitDefense,Frigate,+Frigate defense multiplier
+PERVX,Ships,UnitDefense,Destroyer,+Destroyer defense multiplier
+PERXV,Ships,UnitDefense,Colonization,+Colonization defense multiplier
+PEVRX,Ships,UnitDefense,Intelligence,+Intelligence defense multiplier
+PEVXR,Ships,UnitDefense,Siege,+Siege defense multiplier
+PEXRV,Ships,UnitDefense,Siege,+Siege defense multiplier
+PEXVR,Ships,UnitDefense,Intelligence,+Intelligence defense multiplier
+PREVX,Ships,UnitDefense,Drone,+Drone defense multiplier
+PREXV,Ships,UnitDefense,Corvette,+Corvette defense multiplier
+PRVEX,Ships,UnitDefense,Gunship,+Gunship defense multiplier
+PRVXE,Ships,UnitDefense,Cruiser,+Cruiser defense multiplier
+PRXEV,Ships,UnitDefense,Capital,+Capital defense multiplier
+PRXVE,Ships,UnitDefense,Carrier,+Carrier defense multiplier
+PVERX,Ships,UnitDefense,Siege,+Siege defense multiplier
+PVEXR,Ships,UnitDefense,Colonization,+Colonization defense multiplier
+PVREX,Ships,UnitSpeed,LightFighter,+LightFighter speed
+PVRXE,Ships,UnitSpeed,HeavyFighter,+HeavyFighter speed
+PVXER,Ships,UnitSpeed,Bomber,+Bomber speed
+PVXRE,Ships,UnitSpeed,Drone,+Drone speed
+PXERV,Ships,UnitSpeed,Frigate,+Frigate speed
+PXEVR,Ships,UnitSpeed,Destroyer,+Destroyer speed
+PXREV,Ships,UnitSpeed,Colonization,+Colonization speed
+PXRVE,Ships,UnitSpeed,Intelligence,+Intelligence speed
+PXVER,Ships,UnitSpeed,Siege,+Siege speed
+PXVRE,Ships,UnitSpeed,Siege,+Siege speed
+REPVX,Ships,UnitSpeed,Intelligence,+Intelligence speed
+REPXV,Ships,UnitSpeed,Drone,+Drone speed
+REVPX,Ships,UnitSpeed,Corvette,+Corvette speed
+REVXP,Ships,UnitSpeed,Gunship,+Gunship speed
+REXPV,Ships,UnitSpeed,Cruiser,+Cruiser speed
+REXVP,Ships,UnitSpeed,Capital,+Capital speed
+RPEVX,Ships,UnitSpeed,Carrier,+Carrier speed
+RPEXV,Ships,UnitSpeed,Siege,+Siege speed
+RPVEX,Ships,UnitSpeed,Colonization,+Colonization speed
+RPVXE,Ships,UnitTrainingSpeed,LightFighter,+LightFighter training speed
+RPXEV,Ships,UnitTrainingSpeed,HeavyFighter,+HeavyFighter training speed
+RPXVE,Ships,UnitTrainingSpeed,Bomber,+Bomber training speed
+RVEPX,Ships,UnitTrainingSpeed,Drone,+Drone training speed
+RVEXP,Ships,UnitTrainingSpeed,Frigate,+Frigate training speed
+RVPEX,Ships,UnitTrainingSpeed,Destroyer,+Destroyer training speed
+RVPXE,Ships,UnitTrainingSpeed,Colonization,+Colonization training speed
+RVXEP,Ships,UnitTrainingSpeed,Intelligence,+Intelligence training speed
+RVXPE,Ships,UnitTrainingSpeed,Siege,+Siege training speed
+RXEPV,Ships,UnitTrainingSpeed,Siege,+Siege training speed
+RXEVP,Ships,UnitTrainingSpeed,Intelligence,+Intelligence training speed
+RXPEV,Ships,UnitTrainingSpeed,Drone,+Drone training speed
+RXPVE,Ships,UnitTrainingSpeed,Corvette,+Corvette training speed
+RXVEP,Ships,UnitTrainingSpeed,Gunship,+Gunship training speed
+RXVPE,Ships,UnitTrainingSpeed,Cruiser,+Cruiser training speed
+VEPRX,Ships,UnitTrainingSpeed,Capital,+Capital training speed
+VEPXR,Ships,UnitTrainingSpeed,Carrier,+Carrier training speed
+VERPX,Ships,UnitTrainingSpeed,Siege,+Siege training speed
+VERXP,Ships,UnitTrainingSpeed,Colonization,+Colonization training speed
+VEXPR,Ships,UnitUpkeepReduction,LightFighter,-LightFighter upkeep
+VEXRP,Ships,UnitUpkeepReduction,HeavyFighter,-HeavyFighter upkeep
+VPERX,Ships,UnitUpkeepReduction,Bomber,-Bomber upkeep
+VPEXR,Ships,UnitUpkeepReduction,Drone,-Drone upkeep
+VPREX,Ships,UnitUpkeepReduction,Frigate,-Frigate upkeep
+VPRXE,Ships,UnitUpkeepReduction,Destroyer,-Destroyer upkeep
+VPXER,Ships,UnitUpkeepReduction,Colonization,-Colonization upkeep
+VPXRE,Ships,UnitUpkeepReduction,Intelligence,-Intelligence upkeep
+VREPX,Ships,UnitUpkeepReduction,Siege,-Siege upkeep
+VREXP,Ships,UnitUpkeepReduction,Siege,-Siege upkeep
+VRPEX,Ships,UnitUpkeepReduction,Intelligence,-Intelligence upkeep
+VRPXE,Ships,UnitUpkeepReduction,Drone,-Drone upkeep
+VRXEP,Ships,UnitUpkeepReduction,Corvette,-Corvette upkeep
+VRXPE,Ships,UnitUpkeepReduction,Gunship,-Gunship upkeep
+VXEPR,Ships,UnitUpkeepReduction,Cruiser,-Cruiser upkeep
+VXERP,Ships,UnitUpkeepReduction,Capital,-Capital upkeep
+VXPER,Ships,UnitUpkeepReduction,Carrier,-Carrier upkeep
+VXPRE,Ships,UnitUpkeepReduction,Siege,-Siege upkeep
+VXREP,Ships,UnitUpkeepReduction,Colonization,-Colonization upkeep
+VXRPE,Economy,BaseProduction,Vulkron,+Vulkron production
+XEPRV,Economy,BaseProduction,Aurelite,+Aurelite production
+XEPVR,Economy,BaseProduction,Deuterium,+Deuterium production
+XERPV,Economy,BaseProduction,Astra,+Astra production
+XERVP,Economy,BaseStorage,Vulkron,+Vulkron storage
+XEVPR,Economy,BaseStorage,Aurelite,+Aurelite storage
+XEVRP,Economy,BaseStorage,Deuterium,+Deuterium storage
+XPERV,Economy,BaseStorage,Astra,+Astra storage
+XPEVR,Economy,BuildSpeed,,+Build speed
+XPREV,Economy,ShipBuildSpeed,,+Ship build speed
+XPRVE,Logistics,TravelSpeed,,+Fleet travel speed
+XPVER,Combat,BaseDefense,,+Base defense multiplier
+XPVRE,Economy,ResearchSpeed,,+Research speed
+XREPV,Economy,UpkeepReduction,,-Global upkeep
+XREVP,Economy,TransmuteSpeed,,+Transmutation speed
+XRPEV,Combat,FleetAttack,,+Fleet attack multiplier
+XRPVE,Combat,FleetDefense,,+Fleet defense multiplier
+XRVEP,Combat,FleetSiege,,+Fleet siege potency
+XRVPE,Combat,FleetRaidLoot,,+Raid loot
+XVEPR,Logistics,FleetCargo,,+Fleet cargo capacity
+XVERP,Combat,FleetCrit,,+Fleet crit
+XVPER,Combat,FleetEvasion,,+Fleet evasion
+XVPRE,Combat,FleetTracking,,+Fleet tracking
+XVREP,Espionage,SpySurvival,,+Spy survival
+XVRPE,Diplomacy,DiplomacyPenaltyReduction,,-Diplomacy penalties

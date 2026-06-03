@@ -1,0 +1,121 @@
+PermutationKey,Category,TargetKind,TargetParam,Label
+EPRVX,함선,UnitAttack,LightFighter,+경전투기 공격 배율
+EPRXV,함선,UnitAttack,HeavyFighter,+중전투기 공격 배율
+EPVRX,함선,UnitAttack,Bomber,+폭격기 공격 배율
+EPVXR,함선,UnitAttack,Drone,+드론 공격 배율
+EPXRV,함선,UnitAttack,Frigate,+호위함 공격 배율
+EPXVR,함선,UnitAttack,Destroyer,+구축함 공격 배율
+ERPVX,함선,UnitAttack,Colonization,+개척선 공격 배율
+ERPXV,함선,UnitAttack,Intelligence,+첩보선 공격 배율
+ERVPX,함선,UnitAttack,Siege,+공성함 공격 배율
+ERVXP,함선,UnitAttack,Siege,+공성함 공격 배율
+ERXPV,함선,UnitAttack,Intelligence,+첩보선 공격 배율
+ERXVP,함선,UnitAttack,Drone,+드론 공격 배율
+EVPRX,함선,UnitAttack,Corvette,+초계함 공격 배율
+EVPXR,함선,UnitAttack,Gunship,+건쉽 공격 배율
+EVRPX,함선,UnitAttack,Cruiser,+순양함 공격 배율
+EVRXP,함선,UnitAttack,Capital,+주력함 공격 배율
+EVXPR,함선,UnitAttack,Carrier,+항공모함 공격 배율
+EVXRP,함선,UnitAttack,Siege,+공성함 공격 배율
+EXPRV,함선,UnitAttack,Colonization,+개척선 공격 배율
+EXPVR,함선,UnitDefense,LightFighter,+경전투기 방어 배율
+EXRPV,함선,UnitDefense,HeavyFighter,+중전투기 방어 배율
+EXRVP,함선,UnitDefense,Bomber,+폭격기 방어 배율
+EXVPR,함선,UnitDefense,Drone,+드론 방어 배율
+EXVRP,함선,UnitDefense,Frigate,+호위함 방어 배율
+PERVX,함선,UnitDefense,Destroyer,+구축함 방어 배율
+PERXV,함선,UnitDefense,Colonization,+개척선 방어 배율
+PEVRX,함선,UnitDefense,Intelligence,+첩보선 방어 배율
+PEVXR,함선,UnitDefense,Siege,+공성함 방어 배율
+PEXRV,함선,UnitDefense,Siege,+공성함 방어 배율
+PEXVR,함선,UnitDefense,Intelligence,+첩보선 방어 배율
+PREVX,함선,UnitDefense,Drone,+드론 방어 배율
+PREXV,함선,UnitDefense,Corvette,+초계함 방어 배율
+PRVEX,함선,UnitDefense,Gunship,+건쉽 방어 배율
+PRVXE,함선,UnitDefense,Cruiser,+순양함 방어 배율
+PRXEV,함선,UnitDefense,Capital,+주력함 방어 배율
+PRXVE,함선,UnitDefense,Carrier,+항공모함 방어 배율
+PVERX,함선,UnitDefense,Siege,+공성함 방어 배율
+PVEXR,함선,UnitDefense,Colonization,+개척선 방어 배율
+PVREX,함선,UnitSpeed,LightFighter,+경전투기 속도
+PVRXE,함선,UnitSpeed,HeavyFighter,+중전투기 속도
+PVXER,함선,UnitSpeed,Bomber,+폭격기 속도
+PVXRE,함선,UnitSpeed,Drone,+드론 속도
+PXERV,함선,UnitSpeed,Frigate,+호위함 속도
+PXEVR,함선,UnitSpeed,Destroyer,+구축함 속도
+PXREV,함선,UnitSpeed,Colonization,+개척선 속도
+PXRVE,함선,UnitSpeed,Intelligence,+첩보선 속도
+PXVER,함선,UnitSpeed,Siege,+공성함 속도
+PXVRE,함선,UnitSpeed,Siege,+공성함 속도
+REPVX,함선,UnitSpeed,Intelligence,+첩보선 속도
+REPXV,함선,UnitSpeed,Drone,+드론 속도
+REVPX,함선,UnitSpeed,Corvette,+초계함 속도
+REVXP,함선,UnitSpeed,Gunship,+건쉽 속도
+REXPV,함선,UnitSpeed,Cruiser,+순양함 속도
+REXVP,함선,UnitSpeed,Capital,+주력함 속도
+RPEVX,함선,UnitSpeed,Carrier,+항공모함 속도
+RPEXV,함선,UnitSpeed,Siege,+공성함 속도
+RPVEX,함선,UnitSpeed,Colonization,+개척선 속도
+RPVXE,함선,UnitTrainingSpeed,LightFighter,+경전투기 훈련 속도
+RPXEV,함선,UnitTrainingSpeed,HeavyFighter,+중전투기 훈련 속도
+RPXVE,함선,UnitTrainingSpeed,Bomber,+폭격기 훈련 속도
+RVEPX,함선,UnitTrainingSpeed,Drone,+드론 훈련 속도
+RVEXP,함선,UnitTrainingSpeed,Frigate,+호위함 훈련 속도
+RVPEX,함선,UnitTrainingSpeed,Destroyer,+구축함 훈련 속도
+RVPXE,함선,UnitTrainingSpeed,Colonization,+개척선 훈련 속도
+RVXEP,함선,UnitTrainingSpeed,Intelligence,+첩보선 훈련 속도
+RVXPE,함선,UnitTrainingSpeed,Siege,+공성함 훈련 속도
+RXEPV,함선,UnitTrainingSpeed,Siege,+공성함 훈련 속도
+RXEVP,함선,UnitTrainingSpeed,Intelligence,+첩보선 훈련 속도
+RXPEV,함선,UnitTrainingSpeed,Drone,+드론 훈련 속도
+RXPVE,함선,UnitTrainingSpeed,Corvette,+초계함 훈련 속도
+RXVEP,함선,UnitTrainingSpeed,Gunship,+건쉽 훈련 속도
+RXVPE,함선,UnitTrainingSpeed,Cruiser,+순양함 훈련 속도
+VEPRX,함선,UnitTrainingSpeed,Capital,+주력함 훈련 속도
+VEPXR,함선,UnitTrainingSpeed,Carrier,+항공모함 훈련 속도
+VERPX,함선,UnitTrainingSpeed,Siege,+공성함 훈련 속도
+VERXP,함선,UnitTrainingSpeed,Colonization,+개척선 훈련 속도
+VEXPR,함선,UnitUpkeepReduction,LightFighter,-경전투기 유지비
+VEXRP,함선,UnitUpkeepReduction,HeavyFighter,-중전투기 유지비
+VPERX,함선,UnitUpkeepReduction,Bomber,-폭격기 유지비
+VPEXR,함선,UnitUpkeepReduction,Drone,-드론 유지비
+VPREX,함선,UnitUpkeepReduction,Frigate,-호위함 유지비
+VPRXE,함선,UnitUpkeepReduction,Destroyer,-구축함 유지비
+VPXER,함선,UnitUpkeepReduction,Colonization,-개척선 유지비
+VPXRE,함선,UnitUpkeepReduction,Intelligence,-첩보선 유지비
+VREPX,함선,UnitUpkeepReduction,Siege,-공성함 유지비
+VREXP,함선,UnitUpkeepReduction,Siege,-공성함 유지비
+VRPEX,함선,UnitUpkeepReduction,Intelligence,-첩보선 유지비
+VRPXE,함선,UnitUpkeepReduction,Drone,-드론 유지비
+VRXEP,함선,UnitUpkeepReduction,Corvette,-초계함 유지비
+VRXPE,함선,UnitUpkeepReduction,Gunship,-건쉽 유지비
+VXEPR,함선,UnitUpkeepReduction,Cruiser,-순양함 유지비
+VXERP,함선,UnitUpkeepReduction,Capital,-주력함 유지비
+VXPER,함선,UnitUpkeepReduction,Carrier,-항공모함 유지비
+VXPRE,함선,UnitUpkeepReduction,Siege,-공성함 유지비
+VXREP,함선,UnitUpkeepReduction,Colonization,-개척선 유지비
+VXRPE,경제,BaseProduction,Vulkron,+벌크론 생산량
+XEPRV,경제,BaseProduction,Aurelite,+아우렐라이트 생산량
+XEPVR,경제,BaseProduction,Deuterium,+중수소 생산량
+XERPV,경제,BaseProduction,Astra,+아스트라 생산량
+XERVP,경제,BaseStorage,Vulkron,+벌크론 저장량
+XEVPR,경제,BaseStorage,Aurelite,+아우렐라이트 저장량
+XEVRP,경제,BaseStorage,Deuterium,+중수소 저장량
+XPERV,경제,BaseStorage,Astra,+아스트라 저장량
+XPEVR,경제,BuildSpeed,,+건설 속도
+XPREV,경제,ShipBuildSpeed,,+함선 건조 속도
+XPRVE,군수,TravelSpeed,,+함대 이동 속도
+XPVER,전투,BaseDefense,,+기지 방어 배율
+XPVRE,경제,ResearchSpeed,,+연구 속도
+XREPV,경제,UpkeepReduction,,-전체 유지비
+XREVP,경제,TransmuteSpeed,,+변환 속도
+XRPEV,전투,FleetAttack,,+함대 공격 배율
+XRPVE,전투,FleetDefense,,+함대 방어 배율
+XRVEP,전투,FleetSiege,,+함대 공성 위력
+XRVPE,전투,FleetRaidLoot,,+약탈 수익
+XVEPR,군수,FleetCargo,,+함대 화물 적재량
+XVERP,전투,FleetCrit,,+함대 치명타
+XVPER,전투,FleetEvasion,,+함대 회피
+XVPRE,전투,FleetTracking,,+함대 추적
+XVREP,첩보,SpySurvival,,+첩보 생존율
+XVRPE,외교,DiplomacyPenaltyReduction,,-외교 페널티

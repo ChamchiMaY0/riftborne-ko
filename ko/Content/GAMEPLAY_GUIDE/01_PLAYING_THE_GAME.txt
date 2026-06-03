@@ -1,0 +1,133 @@
+01) PLAYING THE GAME
+--------------------
+
+WHAT KIND OF STRATEGY GAME THIS IS
+----------------------------------
+Riftborne is a real-time simulation strategy game built around economy tempo,
+fleet pressure, objective control, and map control.
+
+Winning play links resource growth, expansion timing, travel speed, and fleet
+pressure into control of the center, then converts that control through the
+Origin Wormhole or faction Keystone Visions.
+
+STANDARD NEW CAMPAIGN DEFAULTS
+------------------------------
+The standard campaign starts with these default settings:
+- Base production: `1,000` per hour for each core resource
+- Storage target at level 5: `5,000` per resource
+- Storage target at level 20: `100,000` per resource
+- Resource-building target at level 20: `10,000` per hour per resource
+- Global fleet travel multiplier: `3.0x`
+- Global attack multiplier: `1.0x`
+- Global defense multiplier: `1.0x`
+
+Your first base starts stronger than later colonies:
+- `Silo 5`
+- `Solar Cell 5`
+- all four resources filled to current storage cap
+
+That strong opening stock is intentional.
+It lets you start building immediately instead of waiting for the first trickle
+of income.
+
+NO OFFLINE CATCH-UP
+-------------------
+Saved campaigns resume at the exact saved simulation time.
+There is no automatic offline income burst when you continue a save.
+
+Practical meaning:
+- if you log out with queues half done, they are still half done when you return
+- if you save while vulnerable, you load while vulnerable
+- if you want Astra safety, shield safety, or queue depth, build it before you
+  exit
+
+THE CORE FLOW OF A MATCH
+------------------------
+Early game:
+- reach `Central Spire 5` quickly enough to unlock the first strategic outpost
+- turn your home base and first outpost into real resource throughput
+- use infrastructure, raids, or both to lift income beyond the starting stock
+- scout your local ring and decide whether you can expand greedily or must
+  respect a nearby threat
+- keep Astra positive while the first ship queues come online
+
+Midgame:
+- hit `Central Spire 20` on a base that can launch and defend new colonies
+- push strong colonies beyond `Central Spire 20` when you need more strategic
+  outposts or asteroid mining sites from the same origin
+- turn outposts, colonies, and trade routes into a stronger logistics network
+- split bases into roles instead of making every colony mediocre
+- use raids and selective attacks to slow rivals, clear lanes, and take out
+  exposed competitors without overcommitting
+
+Late game:
+- stop thinking only in terms of income and start thinking in terms of travel
+  time, launch distance, objective pressure, and core control
+- prepare a base or cluster that can actually hold central pressure
+- contest `(0,0)` only when your economy can survive the retaliation
+- clear and hold Keystone sites when your faction is ready to fund their Vision
+  conversion
+
+YOUR FIRST SESSION: A SAFE PLAYBOOK
+-----------------------------------
+1. Spend the full starting stock.
+   A full warehouse that is doing nothing is wasted tempo.
+
+2. Build Central Spire earlier than feels comfortable.
+   Expansion is hard-gated by Spire milestones, so a late Spire means a late
+   outpost, a late colony, and a late everything.
+
+3. Get real resource throughput online immediately.
+   Early game is about the first mining outpost plus infrastructure or raids
+   that keep production climbing.
+
+4. Keep Astra stable while ship training starts.
+   Astra pays ship upkeep, fuels Solar scaling, and is still the fastest way to
+   lose a stable empire if you ignore it.
+
+5. Build the right Shipyards before you think you need them.
+   Each hull family uses its own shipyard for training and travel tempo, so
+   shipyards still improve offense, defense, logistics, and reaction time.
+
+6. Scout before you commit.
+   Many losing attacks start as "I assumed that base was weak."
+
+7. Expand where the lane is defensible, not only where the tile is rich.
+   A rich colony that you cannot reinforce is often just free loot for someone
+   else.
+
+8. Treat Keystone funding as a timing decision, not an automatic rush.
+   A Keystone that starves your build tempo is weaker than one backed by a real
+   economy and enough defense to hold it.
+
+WHAT GOOD PROGRESSION LOOKS LIKE
+--------------------------------
+You are usually in a strong position when:
+- Astra stays positive even while training ships
+- at least one base has meaningful ship throughput
+- at least one base is pushing toward outposts or colonies
+- you can replace raid losses quickly
+- you know which rival is the nearest real threat
+
+You are usually in a fragile position when:
+- Astra is near zero
+- every base is trying to do every job
+- you have no fast-response base
+- you are funding objectives too early and military too late
+- you are launching fleets without current intel
+
+A USEFUL HOURLY PLANNING QUESTION
+--------------------------------
+Keep asking:
+"What is my empire trying to become over the next 2 to 4 launch windows?"
+
+Examples of solid planning answers:
+- "A safer economic cluster that can afford a second colony."
+- "A raid engine that punishes exposed Astra."
+- "A fortress line that buys time for Keystone conversion."
+- "A fast-response network that can reach the central ring first."
+
+Answers that often signal drift:
+- "I am upgrading whatever I can afford."
+- "I am building every nice-looking structure equally."
+- "I will attack when the queue finishes, even if the target changes."
